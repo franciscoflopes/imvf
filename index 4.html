@@ -1,0 +1,4053 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=10.0,user-scalable=no">
+    <title>IMVF</title>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+<link href='https://fonts.googleapis.com/css?family=Hanken Grotesk' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/dumbbell.js"></script>
+<script src="https://code.highcharts.com/modules/lollipop.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+</head>
+    
+<body>   
+    
+    
+<!-- COPIAR A PARTIR DAQUI -->
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<!--<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>-->
+    
+
+
+<style type="text/css">
+    
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+ body{
+    margin: 0;
+ }
+.imvf-mobile{
+    display:none;
+}
+.imvf-body{
+    font-family:  'Hanken Grotesk', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+}
+
+.imvf-body ul{
+
+    text-align: left;
+
+}
+
+.imvf-body li{
+    margin-bottom: 10px;
+
+}
+.imvf-body img{
+    margin-bottom: 2%;
+}
+.imvf-dois-graficos {
+    display: inline-block;
+    margin: 1%;
+}
+.imvf-dois-graficos img{
+    max-width: 350px;
+    margin: 10px;
+}
+/* Texto */
+
+.clique-mais {
+    position: absolute;
+    top: -29px;
+    left: 128px;
+    margin-bottom: 0px;
+    z-index: 2;
+}
+.flip-card-3D-wrapper {
+  width: 262.5px;
+  /*height: 150px;*/
+  position: relative;
+  -o-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -ms-perspective: 1000px;
+  perspective: 1000px;
+  margin: 0 auto;
+}
+.flip-card {
+  width: 100%;
+  text-align: center;
+  margin: 0px auto;
+  position: absolute;
+  -o-transition: all 0.8s ease-in-out;
+  -webkit-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  -o-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+    background-color: #eefcdc;
+}
+.do-flip {
+  -o-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.flip-card-btn-turn-to-back, .flip-card-btn-turn-to-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    visibility: hidden;
+    padding: 0;
+    background: none;
+}
+.flip-card-btn-turn-to-front img{
+    pointer-events: none
+}
+.flip-card .flip-card-front, .flip-card .flip-card-back{
+    width: 100%;
+    position: absolute;
+    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 2;
+}
+
+.flip-card .flip-card-back {
+    -o-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.flip-card .flip-card-front p, .flip-card .flip-card-back p {
+    color: grey;
+    display: block;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+}   
+    
+
+/* Texto */
+.imvf-titulo{
+    font-family: 'Hanken Grotesk';
+    color: black;
+    font-style: normal;
+    text-align: center; 
+    max-width: 700px;
+    z-index: 3;
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 27px;
+    line-height: 35px;
+    padding-top: 30px;  
+    font-weight: 800;
+}
+
+.imvf-titulo-2{
+    font-family: 'Hanken Grotesk';
+    color: #006193;
+    font-style: normal;
+    text-align: center; 
+    max-width: 700px;
+    z-index: 3;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 25px;
+    line-height: 35px;
+    padding-top: 30px;  
+    font-weight: 800;
+}
+
+.imvf-titulo-2::before{
+    content: ' ';
+    display: block;
+    border-top: 3px solid #006193;
+    width: 50px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.imvf-subtitulo{
+    font-family: 'Hanken Grotesk', sans-serif;
+    color: black;
+    text-align: center; 
+    margin: 0 auto;
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 700;
+}
+
+
+
+.imvf-texto-corrido {
+    margin-top: 24px;
+     max-width: 716px;
+    margin: 0 auto;
+}
+.imvf-texto-corrido p{
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #0a0a0a;
+    text-align: left;
+}
+.imvf-texto-corrido p a{
+    color: #a80014;
+    border-bottom: 1px solid #cacaca;
+}
+.imvf-entrada{
+    font-size: 17px;
+    color: #454545;
+    max-width: 650px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.imvf-legenda {
+    color: gray;
+    margin-left: 17px;
+    font-size: 16px;
+    font-size: 16px;
+    text-align: left;
+    left: 0px;
+    max-width: 400px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.fonte-footer p {
+	color: #7F7F7F;
+    border-top: 1px solid #E7E6E6;
+	border-bottom: 1px solid #E7E6E6;
+	padding: 0% 2% 0% 2%;
+    padding-top: 3px;
+	padding-bottom: 3px;
+    margin:0px;
+    background: none;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-weight: 14px;
+    font-size: 15px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.35;
+    text-align: center;
+    font-size: 15px;
+    max-width: 1250px;
+    width: auto;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fonte-footer {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #E7E6E6;
+    border-bottom: 1px solid #E7E6E6;
+    background-color: white;
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #626262;
+    padding: 4px;
+    line-height: 16px;
+}
+.fontes {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#ficha-tecnica{
+    background-color: #efefef;
+    color: gray;
+    font-size: 15px;
+    text-align: center;
+    padding: 0px 100px;}
+
+    .nav-btn{
+        transition: 0.3s;
+    }
+
+    .nav-btn:hover{
+        background-color: #076e48;
+    }
+
+@media only screen and (max-width: 800px){
+.imvf-titulo{
+    font-size: 25px;
+    line-height: 30px;
+}
+.imvf-texto-corrido{
+    margin-left: 12%;
+    margin-right: 12%;
+}
+}
+
+@media only screen and (max-width: 500px){
+    
+.imvf-titulo{
+    padding-top: 40px;
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 0px;}
+    
+.imvf-body img{
+    padding: 0px;
+}
+.imvf-desktop{
+    display:none;
+}
+.imvf-mobile{
+    display:block;
+    text-align: center;
+    margin: 0 auto;
+}
+.imvf-texto-corrido {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.imvf-entrada{
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 16px;}
+       
+.fontes{
+    margin-left: 0px;
+    width: 100%;}
+
+#ficha-tecnica{
+    padding: 0px 5px;}
+.flip-card-3D-wrapper {
+    width: 95vw;
+    max-width: 350px;
+    height: 65vw;
+    max-height: 40vh;
+    position: relative;
+    -o-perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+.clique-mais {
+    position: initial;
+    top: 90px;
+}
+}
+    
+@media print, screen and (min-width: 40em) {
+}
+
+@media print, screen and (min-width: 64em){
+}
+
+.imvf-body{
+    max-width: none;
+    width: 100%;
+    background-color: none;
+    position: relative;
+}
+
+.imvf-texto-corrido p a {
+    color: #FF8700;
+    -webkit-text-decoration-color: #FF8700;
+    text-decoration-color: #FF8700;
+    border-bottom: 0px;
+    text-decoration: underline;
+}        
+    
+.imvf-texto-corrido p a:hover {
+    opacity: 0.9
+}    
+
+.imvf-body button {
+    padding: 10px 12px;
+    margin: -1.5px;
+    border-radius: 0px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+}
+    
+.credit{
+    font-size: 13px;
+    text-align: left;
+    padding-left: 17px;
+    color: #525252;
+    margin-top: -20px;
+}
+
+.texto-menu{
+    width: 100%;
+    text-align: center;
+    color:rgba(180, 0, 25, 1);
+}
+
+.imvf-dois-graficos{
+    display: flex;
+    align-items: stretch;
+}
+
+.imvf-dois-graficos div{
+    width: 50%;
+    margin: 7px;
+    padding: 20px;
+}
+
+
+.imvf-tres-graficos {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    font-size: 15px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+
+}    
+
+.imvf-tres-graficos > div{
+    width: 33%;
+    margin: 10px;
+
+}    
+
+.imvf-tres-graficos img{
+    width: 100%;
+    max-width: 120px;
+
+}    
+
+.imvf-1-testemunhos{
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.imvf-1-testemunhos > div{
+    width: 100%;
+}
+
+.imvf-4-testemunhos{
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.imvf-4-testemunhos > div{
+    width: 25%;
+}
+
+.imvf-3-testemunhos{
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.imvf-3-testemunhos > div{
+    width: 33%;
+}
+
+.imvf-2-testemunhos{
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.imvf-2-testemunhos > div{
+    width: 50%;
+}
+
+.imvf-3-testemunhos img, .imvf-2-testemunhos img, .imvf-1-testemunhos img, .imvf-4-testemunhos img{
+    max-width: 200px;
+}
+
+
+
+.imvf-quatro-graficos{
+    position: relative;
+    display: flex;
+    width: 100%;
+    vertical-align: top;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px 5px;
+}
+
+.imvf-quatro-graficos div{
+    max-width: 300px;
+    width: 100%;
+}
+
+.imvf-titulo-tema{
+    margin-top: 30px;
+    font-size: 35px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #B40019;
+    font-family: 'Hanken Grotesk';
+    font-weight: 400;
+}  
+
+.imvf-texto-corrido{max-width: 690px; margin-top: 15px;}    
+
+.imvf-texto-corrido p{
+    color: black;
+    text-align: left;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.imvf-titulo{color: #B40019}    
+
+.imvf-entrada{color: #848484}
+
+.separador{
+    width: 20%; 
+    margin: 0 auto
+}
+
+
+/* parallax*/
+
+.texto-parallax{
+    width: 100%;
+    padding: 25px 25px 2px 25px;
+    text-align: left;
+} 
+
+.parallax {
+    background-color: #dbdbdb;
+    /* The image used */
+    background-image: url("https://www.imvf.org/wp-content/uploads/2019/09/dsc00614.jpg");
+
+    /* Set a specific height */
+    min-height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}    
+
+.parallax-1 {
+    background-color: #dbdbdb;
+    /* The image used */
+    background-image: url("https://www.imvf.org/wp-content/uploads/2019/09/tekkifii-youth-bantaba-1.jpg");
+
+    /* Set a specific height */
+    min-height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }   
+
+.parallax-1 .texto-parallax{
+    margin: 0;
+    max-width: 490px;
+    float: right;
+    background-color: #000000a1;
+    min-height: 96.3vh;
+    position: relative;}
+
+.parallax-2 {
+    background-color: #dbdbdb;
+    /* The image used */
+    background-image: url("https://www.imvf.org/wp-content/uploads/2019/01/make-it-the-gambia-project-1080x675.jpg");
+
+    /* Set a specific height */
+    min-height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+
+/*botoes*/    
+.icones {
+    max-width: 525px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    background-color: none;}
+/*transition: all .1s ease;*/
+ 
+.menu-topo{
+    position: sticky;
+    top: 0px;
+    z-index: 50; 
+    transition: transform .25s ease;
+    height: 115px;  
+    background-color:white;
+    border-bottom: 1px solid rgb(173, 173, 173);
+}
+    
+.imvf-navigation {
+    margin-left: auto;
+    margin-right: auto;
+    height: 15px;
+    width: 100%;
+    top: 0px;
+    position: relative;
+    color: gray;
+    z-index: 100;
+    margin:0 auto;
+    text-align: center;
+    font-size: 15px;
+    font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+}
+.navigation__link {
+    background-color: none;
+    width: 33%;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline;
+    float: left;
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 0px 5px 0px;
+    font-weight: 400;
+    opacity: 0.5;
+    position: relative;
+}
+.navigation__link img{
+    max-width: 70px;
+    margin-bottom:5px;
+}
+.navigation__link:hover {
+    background-color: none;
+    opacity: 1;
+}
+.navigation__link.active {
+    color: black;
+    background-color: none;
+     opacity: 1;
+    position: relative;
+} 
+    
+#ficha-tecnica a {
+    color: gray;
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+.infog-tres-graficos{
+    width: 18%;
+    height: 30vh;
+}
+      
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+    
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+.infog-tres-graficos{
+    width: 17%;
+        height: 20vh;
+}
+}
+     
+@media only screen and (max-width: 500px) {
+.parallax {
+    min-height: 60vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: scroll;
+}  
+
+.imvf-body img {
+    padding: 0px;
+    width: 100%;
+}
+
+.parallax-1 {
+    /* Set a specific height */
+    min-height: 100vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: scroll;
+    background-position: left;
+}    
+
+.parallax-2 {
+    /* Set a specific height */
+    min-height: 40vh; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: scroll;
+}
+
+.separador {
+    width: 230px;
+    margin: 0 auto;
+}
+
+.floresta > img{
+    width: 250px;
+}
+
+.imvf-titulo{
+    margin-top: 30px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.imvf-dois-graficos{
+    width: 100%;
+    margin: 0%;
+}    
+
+.imvf-dois-graficos img{
+    width: 100%;
+    margin: 0%;
+}
+
+.imvf-tres-graficos{
+    width: 90%;
+    margin: 0px;
+}  
+.imvf-tres-graficos img{
+    width: 55%;
+}  
+
+.imvf-quatro-graficos {
+    gap: 20px 0px;
+}
+
+.imvf-quatro-graficos div {
+max-width: none;
+width: 100%;
+}
+.credit{
+    padding-left: 17px;
+    margin-top: -20px
+}
+
+.imvf-texto-corrido {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.imvf-titulo-tema {
+    line-height: 45px;
+}
+
+
+.parallax-1 .texto-parallax{
+    padding: 110% 2% 0% 0%;
+}
+
+.parallax-1 .imvf-entrada{
+    line-height: 20px;
+} 
+} 
+    
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.active-fi {
+  background-color: #ffffff;
+  color: white;
+}
+#container-gambia {
+    height: 200px;
+    min-width: 310px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
+    
+    
+/*TABELA*/
+    
+
+
+/* Table Styles */
+
+.table-wrapper{
+    margin: 10px 50px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+.table-wrapper td{
+    max-width: 100px
+}
+td p{
+    width: 100px
+}
+.fl-table {
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+/*    white-space: nowrap;*/
+    background-color: white;
+}
+.fl-table td, .fl-table th {
+    text-align: center;
+    padding: 8px;
+}
+.fl-table td {
+    border-right: 1px solid #f8f8f8;
+    font-size: 12px;
+}
+.fl-table thead th {
+    color: #ffffff;
+    background: #19AA74;
+}
+.fl-table thead th:nth-child(odd) {
+    color: #ffffff;
+    background: #006193;
+}
+.fl-table tr:nth-child(even) {
+    background: #F8F8F8;
+}
+/* Responsive */
+
+@media (max-width: 767px) {
+    /*.table-wrapper:before{
+        content: "Scroll horizontally >";
+        display: block;
+        text-align: right;
+        font-size: 11px;
+        color: white;
+        padding: 0 0 10px;
+    }*/
+    .table-wrapper{
+        margin: 10px 10px 70px;
+    }
+    .fl-table {
+        display: block;
+        width: 100%;
+    }
+    .fl-table thead, .fl-table tbody, .fl-table thead th {
+        display: block;
+    }
+    .fl-table thead th:last-child{
+        border-bottom: none;
+    }
+    .fl-table thead {
+        float: left;
+        max-width: 80px;
+    }
+    .fl-table tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+    }
+    .fl-table td, .fl-table th {
+        padding: 20px .625em .625em .625em;
+        height: 350px;
+        vertical-align: middle;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: auto;
+        font-size: 13px;
+        text-overflow: ellipsis;
+    }
+    .fl-table thead th {
+        text-align: left;
+        border-bottom: 1px solid #f7f7f9;
+        max-width: 80px
+    }
+    .fl-table tbody tr {
+        display: table-cell;
+    }
+    .fl-table tbody tr:nth-child(odd) {
+        background: none;
+        width: 50%
+    }
+    .fl-table tr:nth-child(even) {
+        background: transparent;
+    }
+    .fl-table tr td:nth-child(odd) {
+        background: #F8F8F8;
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tr td:nth-child(even) {
+        border-right: 1px solid #E6E4E4;
+    }
+    .fl-table tbody td {
+        display: block;
+        text-align: center;
+    }
+    .table-wrapper td{
+    max-width: none;
+}
+}
+.sublinha{
+    background-color: rgba(180, 0, 25, 0.5);
+    margin: 1px;
+    padding: 2px;
+}
+.sublinha2{
+    background-color: orange;
+    margin: 1px;
+    padding: 2px;
+}
+.sublinha2A{
+    background-color: rgba(255, 165, 0, 0.5);
+    margin: 1px;
+    padding: 2px;
+}
+.container-gambia2, .container-gambia3 {
+ display: none;
+ }
+.active{
+    color: #d1eee3;
+}
+.btn{
+    background-color: #19aa74;
+    }
+
+.btn:active{
+    background-color: #04683f;
+    color:black
+    }
+
+.btn:focus{
+    background-color: #04683f;
+    }
+
+
+
+
+    /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 55; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 960px;
+    height: 540px;
+    position: relative;
+    margin-top: calc(50vh - 320px);
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 0px;
+    right: 15px;
+    display: block;
+    position: absolute;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-video{
+    background-color: transparent;
+    font-weight: 300;
+    color:rgb(61, 61, 61);
+    text-decoration:underline ;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.btn-video:hover{
+    font-weight: 300;
+    text-decoration: underline;
+    opacity: 1;
+}
+.btn-video::before{
+    content: url(img/play.png);
+    width: auto;
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    top: 8px;
+}
+
+.nomes-testemunhos{
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 200;
+    color: #b31f24;
+    margin: 0;
+    line-height: 30px;
+    margin-top: -10px;
+}
+    
+</style>
+    
+    
+
+<div id="imvf-body" class="imvf-body">
+
+
+<!-- menu de navegação -->    
+    <div class="menu-topo" id="menu-topo">
+        <nav class="imvf-navigation" id="mainNav">
+            <div class="icones" >
+                <div><a class="navigation__link" href="#1"><img src="img/milestones.png"><br><span class="texto-menu">HIGHLIGHTS</span></a></div>
+                <div><a class="navigation__link" href="#2"><img src="img/employees.png"><br><span class="texto-menu">ACTIVITIES</span></a></div>
+                <div><a class="navigation__link" href="#3"><img src="img/conclusion.png"><br><span class="texto-menu">CONCLUSION</span></a></div>
+            </div>
+        </nav>
+    </div>
+
+    <p class="imvf-titulo-tema">Titulo geral</p>
+    <div class="imvf-texto-corrido ">
+        <p>The project TEKKI FII - MAKE IT IN THE GAMBIA, funded by the European Union under the framework of the Emergency Trust Fund for Africa (EUTF for Africa), was implemented in The Gambia for almost four years, between January 2019 and October 2022 by IMVF, with Camões as an institutional partner, and by the implementing partners: Agency for the Development of Women & Children (ADWAC), Alianza por la Solidaridad (ALIANZA) and United Purpose (UP).<br><br>
+
+            The <b>project’s overall objective</b> was to contribute to socio-economic development and to nurture positive prospects for local populations and returning migrants in The Gambia, namely in Central River, North Bank, Lower River and Upper River regions. <br><br>
+
+            <b>Specific objectives (SO) of the action are:</b><br></p>
+
+            <div class="imvf-dois-graficos">
+                <div style="background-color:  rgba(180, 0, 25, 0.3);">
+                    <p style="margin-top: 5px; font-size: 20px;"><b>SO1</b></p>
+                    <p>to boost economic development with a focus on attractive employment and revenue generation in regions prone to migration; </p>
+                </div>
+
+                <div style="background-color:  rgba(180, 0, 25, 0.3);">
+                    <p style="margin-top: 5px; font-size: 20px;"><b>SO2</b></p>
+                    <p>to promote a conducive socio-economic environment for an effective and sustainable reintegration of former migrants and to improve the attractiveness of rural areas.</p>
+                </div>
+
+
+
+
+            </div>
+
+<br>
+<p><b>Results and Activities:</b></p>
+<ul style="list-style: none;">
+    <li><span class="sublinha2"><b>Result 1.</b> </span><br>Sustainable market-oriented agribusiness value chains are emerging and/or reinforced in rural Gambia through training (formal/unformal)</li>
+    <ul>
+        <li><span class="sublinha2A">Activity 1.1 </span> Assess the viability of various identified sites, market bottlenecks and opportunities and training needs</li>
+        <li><span class="sublinha2A">Activity 1.2 </span>Support to rural agroenterprise development</li>
+        <li><span class="sublinha2A">Activity 1.3 </span>Fostering agribusiness at farm level</li>
+        <li><span class="sublinha2A">Activity 1.4 </span>Reinforcement and diversification of training offers</li>
+    </ul>
+    <br>
+    <li><span class="sublinha2"><b>Result 2.</b> </span><br>Social cohesion has been strengthened by the activities of local organizations and the implementation of social/recreational facilities</li>
+    <ul>
+        <li><span class="sublinha2A">A2.1. </span>Support local community radios to boost their capacity as key information and mobilisation channels</li>
+        <li><span class="sublinha2A">A2.2. </span>Implement innovation and social cohesion </li>
+        <li><span class="sublinha2A">A2.3. </span>Schools for social cohesion programme </li>
+    </ul>
+
+</ul>
+
+</div>
+
+    <div class="imvf-dois-graficos" style="max-width: 700px; margin: 0 auto;">
+        <div>
+            <img style="width: 100px;" src="img/money.svg" >
+            <p style="font-weight: 300; color: #006193; margin-top: 0;">Budget</p>
+            <p style="margin: 0; font-size: 30px; font-weight: 800; color: #006193">5.000.000€</p>
+            
+        </div>
+
+        <div>
+            <img style="width: 100px;" src="img/calendar.svg">
+            <p style="font-weight: 300; color: #006193; margin-top: 0;">Period</p>
+            <p style="margin: 0; font-size: 30px; font-weight: 800; color: #006193; line-height: 30px;">Jan 2019<br>~<br>Oct 2022</p>
+            
+        </div>
+
+    </div>
+
+
+<div>
+    <p class="imvf-titulo">Stakeholders</p>
+    <div class="imvf-texto-corrido ">
+    <p>The project led by IMVF with the institutional support of Camões I.P., was integrated on the larger Emergency Trust Fund for Africa (EUTF for Africa) programme funded by the European Union and implemented by 6 different international institutions.</p>
+    <img src="img/dinamic-report.svg">
+    <p>Funding: European Union 
+        Programme partners: Belgian, Deutsch, and Portuguese Cooperation, as well as by a UN (United Nation) body – respectively, ENABEL (Belgian Development Agency), GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit), IMVF (Instituto Marquês de Valle Flôr), ITC (International Trade Centre), and IOM (the International Organization for Migration).
+        </p>
+    </div>
+
+
+    <p class="imvf-titulo">The Project Led By IMVF</p>
+    <div class="imvf-texto-corrido ">
+        <p>IMVF Project implementation partners: Instituto Marquês de Valle Flôr (IMVF) with Camões as an institutional partner, Agency for the Development of Women & Children (ADWAC), Alianza por la Solidaridad (ALIANZA) and United Purpose (UP) </p>
+        <img src="img/dinamic-report2.svg">
+        <p>The Project was developed in close interplay with national and local government authorities, namely Ministry of Agriculture, Ministry of Youths and Sports, Ministry of Education, among many others.</p>
+        </div>
+
+</div>
+
+
+    <br><br><br>
+    
+    <div class="parallax-2"></div>
+    <p class="credit" style="text-align: right; padding: 5px; margin-top: -30px;text-shadow: 1px 1px 2px black; color: #b9b9b9">Foto: IMVF</p>
+    
+    <!-- infografias por módulos -->
+    <div class="separador" id="1">
+        <img src="img/milestones.png">
+    </div>
+    
+    <div class="navegacao">
+    <p class="imvf-titulo-tema" >PROJECT HIGHLIGHTS</p>
+    <p class="imvf-titulo">1.	MAP</p>
+    <div class="imvf-texto-corrido ">
+        <p>
+            The project focused mainly in the rural areas of the Gambia, aiming to reach to the most vulnerable populations and to the youths most exposed to the risks of irregular migration.
+            <br><br>
+            The priority geographies for the activities of the agribusiness component were North Bank and Central River Regions, while the activities of the social cohesion component embraced also Lower River Region and Upper River Region.
+        </p>
+    </div>
+    <br>
+         
+    <button class="icon1 nav-btn btn active">Components</button>
+    <button class="icon2 nav-btn btn">Beneficiaries</button>
+    <button class="icon3 nav-btn btn">Institutions</button>
+    <br>
+         
+         
+    <div style="max-width: 600px; margin: 0 auto;">
+        
+      <div class="btn-gambia container-gambia container-gambia1">
+        <p class="imvf-subtitulo">Components</p>
+        <div id="container-gambia"></div>
+        <div style="text-align: center;max-width: 600px;margin: 0 auto;line-height: 1.2em;z-index: -999">
+            <span style='color:red;font-size: 1.5em;'>●</span>
+            <span class="">Agribusiness support services reinforced</span>
+            <br>
+            <span style='color:blue;font-size: 1.5em;'>●</span>
+            <span class="">Market oriented production increased</span>
+            <br>
+            <span style='color:gray;font-size: 1.5em;'>●</span>
+            <span class="">Training offers adjusted to market needs</span>
+            <br>
+            <span style='color:orange;font-size: 1.5em;'>●</span>
+            <span class="">Network of intergenerational dialogue, recreational and life skills enhancement forums implemented or reinforced</span>
+            <br>
+            <span style='color:olive;font-size: 1.5em;'>●</span>
+            <span class="">Reinforced feelings of belonging among the youth and women</span>
+        </div>
+      </div>    
+        
+      <div class="btn-gambia2 container-gambia container-gambia2">
+        <p class="imvf-subtitulo">Beneficiaries</p>
+        <div id="container-gambia2"></div>
+        </div>
+        <div class="btn-gambia3 container-gambia container-gambia3">
+            <p class="imvf-subtitulo">Institutional project participants by region and component</p>
+            <div id="container-gambia3"></div>     
+        </div>   
+    </div>
+    
+    
+    
+    
+    
+<p class="imvf-titulo">2. Key figures</p>
+<p class="imvf-entrada">The project has achieved or surpassed 93% of the foreseen targets. Some key performance indicators are:</p>
+    
+<p class="imvf-subtitulo">Agribusiness component (result 1):</p>
+
+<div style="position: relative; max-width: 1200px; margin: 0 auto">
+    <p class="imvf-subtitulo" style="margin-top: 20px; margin-bottom: 40px;"></p> 
+    <img class="clique-mais" src="https://static.publicocdn.com/Multimedia/Infografias/618/img/clique.svg">
+
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%">
+         <img class="clique-mais" src="https://static.publicocdn.com/Multimedia/Infografias/618/img/clique.svg">
+         <div style="max-width: 1200px; margin: 0 auto; width: 100%;">
+            <div class="imvf-tres-graficos">
+                <div class="flip-card-3D-wrapper">
+                    <div id="flip-card" class="flip-card">
+                        <div class="flip-card-front"><p></p>
+                            <button id="flip-card-btn-turn-to-back" class="flip-card-btn-turn-to-back"></button>
+                            <img  style="width: 100%" src="img/agrobusiness_support.svg" />
+                        </div>
+                        <div class="flip-card-back"><p></p>
+                            <button id="flip-card-btn-turn-to-front" class="flip-card-btn-turn-to-front"></button>
+                            <img src="https://static.publicocdn.com/Multimedia/Infografias/624/img/verde2.svg?v2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="imvf-tres-graficos">
+                <div class="flip-card-3D-wrapper">
+                    <div id="flip-card1" class="flip-card">
+                        <div class="flip-card-front"><p></p>
+                            <button id="flip-card-btn-turn-to-back1" class="flip-card-btn-turn-to-back"></button>
+                            <img  style="width: 100%" src="img/capacity_strengthened.svg" />
+                        </div>
+                        <div class="flip-card-back"><p></p>
+                            <button id="flip-card-btn-turn-to-front1" class="flip-card-btn-turn-to-front"></button>
+                            <img src="https://static.publicocdn.com/Multimedia/Infografias/624/img/ciencia2.svg?v2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="imvf-tres-graficos">
+                <div class="flip-card-3D-wrapper">
+                    <div id="flip-card2" class="flip-card">
+                        <div class="flip-card-front"><p></p>
+                            <button id="flip-card-btn-turn-to-back2" class="flip-card-btn-turn-to-back"></button>
+                            <img  style="width: 100%" src="img/water.svg" />
+                        </div>
+                        <div class="flip-card-back"><p></p>
+                            <button id="flip-card-btn-turn-to-front2" class="flip-card-btn-turn-to-front"></button>
+                            <img src="https://static.publicocdn.com/Multimedia/Infografias/624/img/crescimento2.svg?v2" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>  
+    
+    
+    
+<pre>CARTÃO 1 – Agrobusiness support
+325 agroenterprises created or supported
+3 value chain reinforced: horticulture, poultry, and small ruminants
+225 people assisted to develop income generating activities
+17 gardens with new or improved fencing or water access facilities 
+
+CARTÃO 2 - capacity strengthened 
+4.841 rural actors with production capacity strengthen
+238 community/volunteer service providers benefiting from capacity building to strengthen service delivery
+5 training centres reinforced in the regions, including 2 newly established 
+362 young Gambians graduated in areas of the agriculture sector (4 months courses and 2 months industrial attachment)
+
+CARTÃO 3 – 846.000€ spent and disbursed 
+Around 535 000€ disbursement on in-kind support (grants)
+Around 315.000€ spent on fencing or water access facilities 
+</pre>
+
+<p class="imvf-subtitulo">Social cohesion component (result 2):</p>
+
+<pre>
+CARTÃO 1 – Social Cohesion activities 
+46.526 participants
+83, including 55 madrassas, engaged
+5 youth facilities constructed or rehabilitated
+
+CARTÃO 2 – Migration
+346 returnees reached
+14.663 migrants or potential migrants impacted
+321 activities implemented
+
+CARTÃO 3 – 638.000€ spent 
+A total of around 160.000€ spent on rehabilitation/construction of centers/sports courts 
+A total of around 478.000€ spent on Social Cohesion activities, including sports and school’s intervention. 
+</pre>
+
+<p class="imvf-subtitulo">All project</p>
+
+<pre>CARTÃO 1 - The project specifically addressed my needs and interests as a woman
+    97,8% of women surveyed agreed or strongly agree
+   
+   CARTÃO 2 - The project specifically addressed my needs and interests as a young person
+   96,2% of youth surveyed strongly agreed 
+   
+   CARTÃO 3 – Improved awareness of the risks of irregular migration and about how to access local economic opportunities in the Gambia 
+   92,6% of respondents agreed</pre>
+
+
+    
+    
+ <p class="imvf-subtitulo">Testemunhos:</p>   
+
+ <p class="imvf-subtitulo">Institutional vídeos:</p> 
+ <br> 
+
+    <div class="imvf-3-testemunhos">
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+            <img src="img/community-garden.svg">
+            <p class="nomes-testemunhos">Community Garden Convergence</p>
+            <p>As the Tekki Fii project came to an end, a convergence meeting of the 32 community vegetable gardens supported during the last 3 years took place in August.  The support provided included fencing, drilling boreholes and improvement of well-functioning irrigation systems, provision of quality seeds and tools alongside a continuous coaching for proper group management and good agriculture practices implementation. The support was geared towards the reinforcement of the agriculture value chain and the promotion of meaningful business opportunities for young people in the rural Gambia.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video1" class="btn-video" onclick="video(myModal1)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal1" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe class="yt-video" width="100%" height="100%" src="https://www.youtube.com/embed/EA7ecazFNrI?rel=0&enablejsapi=1" title="Community Garden Convergence | IMVF | #TekkiFii​​​​​​ – Make it in The Gambia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+            <img src="img/graduation.svg">
+            <p class="nomes-testemunhos">Graduation Ceremony </p>
+            <p>Flashback: 1st Edition of Soma Girls Guide Skills Training Center Students’ graduation ceremony in August 2022. Tekki Fii supported the training of young people and migrant returnees in rural Gambia, in poultry and animal husbandry, to improve job creation and career opportunities.</p>
+
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video2" class="btn-video" onclick="video(myModal2)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal2" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/QE1UR1XvWtQ?rel=0&enablejsapi=1" title="Graduation Ceremony | IMVF | #TekkiFii​​​​​​ – Make it in The Gambia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+
+        <div style=" padding: 0px 15px;">
+            <img src="img/up-documentary.svg">
+            <p class="nomes-testemunhos">UP documentary </p>
+            <p>This documentary tells the story of the 'Tekki-Fii' project, which works on improving the lives of young people in The Gambia. The project aims at decreasing irregular migration for the youth - giving them hope and inspiration to make it in The Gambia.</p>
+
+                <!-- Trigger/Open The Modal -->
+                <button id="btn-video3" class="btn-video" onclick="video(myModal3)">Ver vídeo</button>
+
+                <!-- The Modal -->
+                <div id="myModal3" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uugNJcNDgls?rel=0&enablejsapi=1" title="&#39;Making it at Home&#39; in The Gambia - Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+
+                </div>
+        </div>
+
+    </div>
+
+    <br>
+    <p class="imvf-subtitulo">3 voices of project participants:</p>  
+    <br>
+
+    <div class="imvf-3-testemunhos">
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+            <img src="img/aminata.png">
+            <p class="nomes-testemunhos">Aminata Jallow</p>
+            <p>Produção de gelados</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video4" class="btn-video" onclick="video(myModal4)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal4" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/taE6ix8wcu8?rel=0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+    
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+            <img src="img/jalika.svg">
+            <p class="nomes-testemunhos">Jalika Keita</p>
+            <p>(Jalika Keita is a young farmer from Niamina Dankunku, of Central River Region she started her own farm after completing her university degree in Biology. This is what she has to say to the youth of her region.)</p>
+
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video5" class="btn-video" onclick="video(myModal5)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal5" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/eIOQCox4Ej4?rel=0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+    
+        <div style="padding: 0px 15px;">
+            <img src="img/madrassa.svg">
+            <p class="nomes-testemunhos">Madrassa Migration Awarenes</p>
+            <p>Tekki Fii has reached out to more than 50 madrassas in Lower River, Central River, North Bank and Upper River Regions promoting awareness on the risks associated with irregular migration, procedures for legal migration and opportunities to make a meaningful living in The Gambia.  “Backway is no way, we can make it here!”</p>
+
+                <!-- Trigger/Open The Modal -->
+                <button id="btn-video6" class="btn-video" onclick="video(myModal6)">Ver vídeo</button>
+
+                <!-- The Modal -->
+                <div id="myModal6" class="modal">
+    
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                    src="https://www.youtube.com/embed/ZIiv2HBUAzI?rel=0&enablejsapi=1"
+                    frameborder="0" allowfullscreen></iframe>
+                </div>
+    
+                </div>
+        </div>
+    
+    </div>
+
+
+
+    <p class="imvf-titulo">3. EMPLOYEES</p>
+    <p class="imvf-entrada">
+        The project has successfully contributed to address some of the most pressing challenges of the country – high poverty rates, high unemployment rates, food insecurity, agricultural system relying heavily on weather conditions (rain-fed agriculture). These challenges affect mostly the youth and women and are among the key push factors of irregular migration. The project has also efficiently addressed some of the biggest challenges in terms of migration prevention and returnees’ sustainable reintegration – lack of skills to secure employment opportunities, lack of funding to develop businesses, feeling of social distance with the community.<br><br>
+        523 jobs were created thanks to successful IGA support. This indicator includes youths supported with grants, start-up kits, power tillers and tricycles, which are considered employment created or sustained, as well as indirect jobs generated by the supported MSMEs.</p>
+
+
+        <p class="imvf-subtitulo">Agribusiness</p>
+    <div id="container-queijo-emprego" style="margin: 0 auto; max-width: 650px; height: 500px;"></div>
+    
+
+    
+    <p class="imvf-titulo">Business sector</p>
+    <div id="container-barras-emprego" style="margin: 0 auto; max-width: 650px;"></div>
+
+    
+    <p class="imvf-titulo">Micro small micro enterprises</p>
+
+<div style="display: flex; max-width: 900px; margin: 0 auto;">
+
+    <div id="container-queijo-profile" style="margin: 0 auto; width: 50%;"></div>
+
+    <div id="container-queijo-full-part" style="margin: 0 auto; width: 50%;"></div>
+</div>
+
+
+
+ <p class="imvf-subtitulo">Testemunhos:</p>  
+ <br><br>
+ <div class="imvf-3-testemunhos">
+    <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+        <img src="img/mandou-fofana.svg">
+        <p class="nomes-testemunhos">Mandou Fofana</p>
+        <p>Rice production</p>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="btn-video7" class="btn-video" onclick="video(myModal7)">Ver vídeo</button>
+
+        <!-- The Modal -->
+        <div id="myModal7" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+            src="https://www.youtube.com/embed/LLa9YiSIY3Q?rel=0&enablejsapi=1"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        </div>
+    </div>
+
+    <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+        <img src="img/muhammed-keita.svg">
+        <p class="nomes-testemunhos">Muhammed Keita</p>
+        <p>Introducing Muhammed Keita, agribusinessman and a seedling champion from Mbulum village of the North Bank Region. He recently got the Tekki Fii agro grant worth D250,000 (about 4.000 EUR)</p>
+
+
+        <!-- Trigger/Open The Modal -->
+        <button id="btn-video8" class="btn-video" onclick="video(myModal8)">Ver vídeo</button>
+
+        <!-- The Modal -->
+        <div id="myModal8" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+            src="https://www.youtube.com/embed/TCRc_E29k3g?rel=0&enablejsapi=1"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        </div>
+    </div>
+
+    <div style="padding: 0px 15px;">
+        <img src="img/alfu-marong.svg">
+        <p class="nomes-testemunhos">Alfu Marong </p>
+        <p>Meet Alfu Marong, the owner of Marong Agribusiness Enterprise of Ndofan Village in the North Bank Region. He is involved in animal husbandry and recently benefited from the Tekki Fii agro grant worth D250,000 (around 4,000 EUR). The grant enabled Alfu to increase his staff and productivity, his dream is to expand his business and employ other youths within his region to minimize the level of employment in the country.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video9" class="btn-video" onclick="video(myModal9)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal9" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/ZIiv2HBUAzI?rel=0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            </div>
+    </div>
+
+</div>
+
+
+
+    <br><br><br>
+
+</div>
+
+    <div class="parallax"></div>
+    <p class="credit" style="text-align: right; padding: 5px; margin-top: -30px;">Foto: IMVF</p>
+        
+</div>
+    <br><br><br><br>
+    
+    <div class="navegacao ">
+        <div class="separador" id="2">
+            <img src="img/employees.png">
+        </div>
+        
+        <p class="imvf-titulo-tema" >ACTIVITIES</p>
+
+        <p class="imvf-titulo">1. 	INTERLINK</p>
+
+
+        <div class="imvf-texto-corrido">
+            <p>The combination of an agribusiness and social cohesion component was very complex but proved to be key to the effectiveness of the project.  The project participants were often targeted by different activities which promoted a cross level impact, from the individual to the community and the institutions and promoted systemic change. </p>
+        </div>
+
+        <pre>INFOGRAFIA 6): representativa da interligação das atividades </pre>
+
+
+        <p class="imvf-titulo-2">1.2 Support to rural agro-enterprise development</p>
+
+        <p class="imvf-subtitulo">The activity</p>
+        <div class="imvf-texto-corrido">
+            <p>The support to rural agro enterprises was based on a threefold approach</p>
+            <ul>
+                <li>Access to finance via the provision of in-kind support (grants, start-up kits for trainees and rural youth awards)</li>
+                <li>Improvement of the capabilities to successfully manage and run a MSME via trainings in business and management (Micro, small and medium-sized enterprises)</li>
+                <li>Promotion of market linkage via the participation in trade fairs and the establishment of business networks</li>
+                    
+            </ul>
+
+            <p>Different mechanisms of support to business development were created. Adjusted to youth with different backgrounds and at different stages of business development, the diversity of mechanisms (also with different amounts involved) ensured an inclusive strategy.<br><br>
+                Poultry and small ruminants’ production were the sectors mostly benefiting from business development support.
+                </p>
+
+                <div id="container-barras-acumuladas" style="margin: 0 auto; max-width: 650px;"></div>
+    
+                <p>A total of 554 youths benefited from mechanisms of access to finance, from which 71% males, 29% females and 141 returnees.<br><br>
+                    91,7% of surveyed project participants reported an income increase due to the support of the project and the average increment was 164,4%.<br><br>
+                    523 jobs were created or sustained 
+                    </p>
+
+                    <p class="imvf-subtitulo">Lessons learned</p>
+                    <ul>
+                        <li>The continued monitoring of project participants was essential to the results achieved.</li>
+                        <li>The linkage between agents of the value chain (e.g. grantees and suppliers) and between project participantsand regional government authorities (e.g. grantees and Department of Livestock; farmers and Department of Agriculture) promoted networks that survive the project. These networks are key for the consolidation of the supported value chains and for the sustainability of the intervention.</li>
+                        <li>The engagement of project participants on grants in-kind procurement procedures was crucial for ownership and accountability.</li>
+                            
+                    </ul>
+
+        </div>
+
+            <p class="imvf-subtitulo">Testemunhos:</p>  
+            <br><br>
+            <div class="imvf-3-testemunhos">
+               <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+                   <img src="img/ansumana-jammeh.svg">
+                   <p class="nomes-testemunhos">Ansumana Jammeh</p>
+                   <p>Agriculture inputs</p>
+           
+                   <!-- Trigger/Open The Modal -->
+                   <button id="btn-video10" class="btn-video" onclick="video(myModal10)">Ver vídeo</button>
+           
+                   <!-- The Modal -->
+                   <div id="myModal10" class="modal">
+           
+                   <!-- Modal content -->
+                   <div class="modal-content">
+                       <span class="close">&times;</span>
+                       <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                       src="https://www.youtube.com/embed/arfBC6TnbUc?rel=0&enablejsapi=1"
+                       frameborder="0" allowfullscreen></iframe>
+                   </div>
+           
+                   </div>
+               </div>
+           
+               <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+                   <img src="img/james-gomez.svg">
+                   <p class="nomes-testemunhos">James Gomez</p>
+                   <p>James Gomez is a poultry farmer from Lewna Village in North Bank Region, in The Gambia who improved his farm with support from the #TekkiFii Mini-Grant.</p>
+           
+           
+                   <!-- Trigger/Open The Modal -->
+                   <button id="btn-video11" class="btn-video" onclick="video(myModal11)">Ver vídeo</button>
+           
+                   <!-- The Modal -->
+                   <div id="myModal11" class="modal">
+           
+                   <!-- Modal content -->
+                   <div class="modal-content">
+                       <span class="close">&times;</span>
+                       <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                       src="https://www.youtube.com/embed/OxnsRnunZMQ?rel=0&enablejsapi=1"
+                       frameborder="0" allowfullscreen></iframe>
+                   </div>
+           
+                   </div>
+               </div>
+           
+               <div style="padding: 0px 15px;">
+                   <img src="img/malick-suwareh.svg">
+                   <p class="nomes-testemunhos">Malick Suwareh</p>
+                   <p>Meet Malick Suwareh of Koli Kunda in the Central River Region, in The Gambia involved in animal husbandry. He recently benefited from the Tekki Fii agro grant worth up to D250,000 (around 4,000 EUR) in kind to expand his business. With this support, Malick is very passionate about creating jobs for the youth in his community in the future.</p>
+           
+                       <!-- Trigger/Open The Modal -->
+                       <button id="btn-video12" class="btn-video" onclick="video(myModal12)">Ver vídeo</button>
+           
+                       <!-- The Modal -->
+                       <div id="myModal12" class="modal">
+           
+                       <!-- Modal content -->
+                       <div class="modal-content">
+                           <span class="close">&times;</span>
+                           <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                           src="https://www.youtube.com/embed/3zBfacy64k4?rel=0&enablejsapi=1"
+                           frameborder="0" allowfullscreen></iframe>
+                       </div>
+           
+                       </div>
+               </div>
+           
+           </div>
+    
+        
+
+   <!--GRAFICO-->
+   
+   <p class="imvf-titulo-2">1.3 Fostering agribusiness at farm level</p>
+
+   <p class="imvf-subtitulo">The activity</p>
+
+   <div class="imvf-texto-corrido">
+        <p>Agriculture concentrates the highest proportion of Gambia active population. The mission of the project was to promote a market-oriented production based on a value chain approach. A major intervention was done in community vegetable gardens of NBR and CRR, including:</p>
+        <ul>
+            <li>provision of inputs, tools and small equipment (around 300.000€)</li>
+            <li>trainings on management and Farm Field Schools (46 farm field schools; 1170 project participants)</li>
+            <li>support to the creation of market linkages</li>
+            <li>improvement of fencing and water access facilities (9 gardens)</li>
+            <li>design of garden development plans (30 garden development plans)</li>
+            <li>establishment of Revolving Loan Funds (32 revolving funds operating with a total amount of 32.000€ by the end of the project)</li>
+            <li>capacitation of management committees (193 women)</li>
+            
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Key achievements</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>Total of 3.512 people impacted, 3417 being women (98%) </li>
+            <li>97,6% of surveyed project participants reported an increase in production, with an average increment of 78% compared to the production before the intervention of the project.</li>
+            <li>The intervention in agroinfrastructures brough an immediate impact on the livelihoods, liberating the farmers for other activities.</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Lessons learned</p>
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The linkage between farmers and regional government authorities was promoted. The collaboration with national and regional authorities was key for the alignment with the national priorities of development, facilitated the implementation of the activities and promoted institutional strengthening via key agents capacitation (e.g Department of Agriculture’ extensionists). This joint work was also a sustainability mechanism as it shall facilitate the continuity of the procedures initiated.</li>
+            <li>The establishment of a revolving loan fund, which registered significant savings/investment capacity at the garden group level and the implementation of training of trainers methodologies adjusted to local realities were successful mechanisms of capacitation and sustainability promotion.</li>
+        </ul>
+    </div>
+
+
+    <p class="imvf-subtitulo">Testemunhos:</p>  
+    <br><br>
+    <div class="imvf-1-testemunhos">
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+           <img src="img/jonsaba-jawara.svg">
+           <p class="nomes-testemunhos">Jonsaba Jawara </p>
+           <p>Tekki Fii project partners IMVF and ADWAC distributed garden tools, inputs and Farmer Field School training materials to support women's gardens in the North Bank Region and Central River Region. One of the beneficiaries Jonsaba Jawara of Kerewan, NBR has this to say</p>
+   
+           <!-- Trigger/Open The Modal -->
+           <button id="btn-video13" class="btn-video" onclick="video(myModal13)">Ver vídeo</button>
+   
+           <!-- The Modal -->
+           <div id="myModal13" class="modal">
+   
+           <!-- Modal content -->
+           <div class="modal-content">
+               <span class="close">&times;</span>
+               <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+               src="https://www.youtube.com/embed/_Q63VXaFom8?rel=0&enablejsapi=1"
+               frameborder="0" allowfullscreen></iframe>
+           </div>
+   
+           </div>
+       </div>
+   
+   </div>
+
+    <p class="imvf-titulo-2">1.4 Reinforcement and diversification of training offers</p>
+
+    <p class="imvf-subtitulo">The activity</p>
+
+    <div class="imvf-texto-corrido">
+         <p>For the reinforcement of the employability of Gambian rural youth, skills development opportunities were made available within the 4 main regions of project intervention. Skills learning was coupled with entrepreneurship and career guidance sessions as well as migration awareness activities. This was part of a strategy to ensure that the acquisition of knowledge is complemented with the development of soft skills.<br><br>
+            Training centres were also supported to open or to strengthen their operations.
+            </p>
+     </div>
+
+     <pre>INFOGRAFIA 8):</pre>
+
+
+
+     <p class="imvf-subtitulo">Key achievements</p>
+
+     <div class="imvf-texto-corrido">
+        <ul>
+            <li>A total of 398 youths have benefited from skills development training (agriculture sector and smart phones repairs), from which 46% males, 54% females	</li>
+            <li>5 training centers strengthened, including 2 new training centres opened in the regions</li>
+            <li>training opportunities expanded and diversified in the rural areas of the country</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Lessons learned</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>Training centers were supported in a way that allowed their immediate capacity to provide services, but also to generate income. While financial autonomy is not ensured, it was encouraged the development of strategies to diminish their dependency from external support.</li>
+            <li>Enabling factors (e.g. provision of scholarships for trainees; conditions for breastfeeding mother attendance) were made available to ensure that no youth was excluded for reasons of gender, poverty, culture specificities or education level. </li>
+            
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Testemunhos:</p>  
+    <br><br>
+    <div class="imvf-2-testemunhos">
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+           <img src="img/horticulture.svg">
+           <p class="nomes-testemunhos">Horticulture </p>
+           <p>“Most times in The Gambia, we think farming is an old man’s job, but farming is meant for us, the young people”, Fatoumatta L. Darboe trainee at Julangel Skills Training Centre</p>
+   
+           <!-- Trigger/Open The Modal -->
+           <button id="btn-video14" class="btn-video" onclick="video(myModal14)">Ver vídeo</button>
+   
+           <!-- The Modal -->
+           <div id="myModal14" class="modal">
+   
+           <!-- Modal content -->
+           <div class="modal-content">
+               <span class="close">&times;</span>
+               <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+               src="https://www.youtube.com/embed/V7SSMa8X6Jo?rel=0&enablejsapi=1"
+               frameborder="0" allowfullscreen></iframe>
+           </div>
+   
+           </div>
+       </div>
+
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+        <img src="img/training-programme.svg">
+        <p class="nomes-testemunhos">Training programme  </p>
+        <p>With the support of #TekkiFii, 14 returnees will soon accomplish a training programme in small engines’ repairs provided by Gambia Technical Training Institute (GTTI) in Julangel (URR)</p>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="btn-video15" class="btn-video" onclick="video(myModal15)">Ver vídeo</button>
+
+        <!-- The Modal -->
+        <div id="myModal15" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+            src="https://www.youtube.com/embed/_qdOm3_ZO4?rel=0&enablejsapi=1"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        </div>
+    </div>
+
+   
+   </div>
+
+
+    <p class="imvf-titulo-2">2.1 Support local community radios to boost their capacity as key information and mobilisation channels</p>
+
+    <p class="imvf-subtitulo">The activity</p>
+
+    <div class="imvf-texto-corrido">
+         <p>Radios were supported in terms of equipment (around 45.000€) and infrastructure which, coupled with management and journalism trainings led to strengthen their role as communication channels</p>
+     </div>
+
+     <p class="imvf-subtitulo">Key achievements</p>
+
+     <div class="imvf-texto-corrido">
+          <p>the involvement of community radios has brought together various community actors and fostered intergenerational dialogue about the risks of irregular migration and the economic development opportunities for young people in The Gambia</p>
+      </div>
+
+      <p class="imvf-subtitulo">Lessons learned</p>
+
+      <div class="imvf-texto-corrido">
+           <p>The usage of various communication and dissemination channels was crucial to achieve a wider audience and radios were key to go beyond youths
+              </p>
+       </div>
+
+
+    <p class="imvf-subtitulo">Testemunhos:</p>  
+    <br><br>
+    <div class="imvf-4-testemunhos">
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+           <img src="img/seedy-dampha.svg">
+           <p class="nomes-testemunhos">Words from the radios #1 | Seedy Dampha  </p>
+           <p>Tekki Fii is supporting community radios as key platforms for communication in rural areas of The Gambia, reaching out even to the most isolated communities.</p>
+   
+           <!-- Trigger/Open The Modal -->
+           <button id="btn-video16" class="btn-video" onclick="video(myModal16)">Ver vídeo</button>
+   
+           <!-- The Modal -->
+           <div id="myModal16" class="modal">
+   
+           <!-- Modal content -->
+           <div class="modal-content">
+               <span class="close">&times;</span>
+               <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+               src="https://www.youtube.com/embed/gMeS6umTi9M?rel=0&enablejsapi=1"
+               frameborder="0" allowfullscreen></iframe>
+           </div>
+   
+           </div>
+       </div>
+
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+        <img src="img/sainey-dibba.svg">
+        <p class="nomes-testemunhos">Words from the radios #2 | Sainey Dibba </p>
+        <p>Farafenni Community Radio Manager of Programmes Mr. Sainey Dibba, giving an overview of the impact of the radio equipment provided to his radio station by the #TekkiFii Project. Also, as Vice President of the Network of Community Radios, thanking the European Union funded project for the support provided to community radios is Central River Region, North Bank Region and Lower River Region.</p>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="btn-video17" class="btn-video" onclick="video(myModal17)">Ver vídeo</button>
+
+        <!-- The Modal -->
+        <div id="myModal17" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+            src="https://www.youtube.com/embed/2avpd5T5_cc?rel=0&enablejsapi=1"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        </div>
+    </div>
+    
+    <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+        <img src="img/jerreh-dibba.svg">
+        <p class="nomes-testemunhos">Words from the radios #3 | Jerreh Dibba </p>
+        <p>Jerreh Dibba, station manager of North Bank Community Radio (Kerewan) giving his testimony of how the support provided is improving their daily work and thanking EU through IMVF for the gesture.</p>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="btn-video18" class="btn-video" onclick="video(myModal18)">Ver vídeo</button>
+
+        <!-- The Modal -->
+        <div id="myModal18" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+            src="https://www.youtube.com/embed/-PAjCevpcFs?rel=0&enablejsapi=1"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        </div>
+    </div>
+
+    <div style="padding: 0px 15px;">
+        <img src="img/siaka-sinera.svg">
+        <p class="nomes-testemunhos">Siaka Sinera </p>
+        <p>Radio: The acting manager of Brikamaba Community Radio, Siaka Sinera expressing how the support from the Tekki Fii project is improving their operations and expressing satisfaction with the provided equipment</p>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="btn-video19" class="btn-video" onclick="video(myModal19)">Ver vídeo</button>
+
+        <!-- The Modal -->
+        <div id="myModal19" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+            src="https://www.youtube.com/embed/etCuIadBVAA?rel=0&enablejsapi=1"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        </div>
+    </div>
+   
+   </div>
+
+
+
+
+       <p class="imvf-titulo-2">A2.2 Implement innovation and social cohesion hubs</p>
+
+     <div class="imvf-texto-corrido">
+          <p>The establishment or reinforcement of youth led facilities providing meaningful services to the youth and the overall community was a key dimension of the social cohesion component.<br><br>
+            By boosting the youth role on community development and promoting intergenerational recognition one major push factor of migration was address – youth (lack of) social valorisation.<br><br>
+            Over one hundred activities were implemented at the community level, to encourage the discussions on the risks of irregular migration paths of safe migration and opportunities in the country, particularly in the agribusiness and the sports sectors.<br><br>
+            The networks of youth friendly places were expanded as endeavoured by the National Development Plan 2018-2021
+            </p>
+      </div>
+
+
+      <p class="imvf-subtitulo">Key achievements</p>
+
+      <div class="imvf-texto-corrido">
+        <ul>
+            <li>55 learning circles or outreach initiatives that reached more than 2400 project participants and 30 initiatives of sports for development that reached more than 1300 project participants.</li>
+            <li>1 Youth center and 1 multipurpose hall rehabilitated; 1 new youth center built; </li>
+            <li>1 basketball/volleyball court built and 1 basketball/volleyball court rehabilitated</li>
+            <li>93% of surveyed people strongly agree they are now better aware of the opportunities in the country and of the risks of irregular migration then before benefiting from the Project</li>
+            
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Lessons learned</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The strengthening the organizational capacity of youth led facilities is key for their sustainability</li>
+            <li>These facilities have an important potential as income generation spaces that can create employment and promote meaningful social encounters.</li>            
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Testemunhos:</p>  
+    <br><br>
+    <div class="imvf-2-testemunhos">
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+           <img src="img/amie-lowe.svg">
+           <p class="nomes-testemunhos">Amie Lowe</p>
+           <p>On Saturday 20th March 2021, the Tekki Fii - Building a Future: Make it in The Gambia project led by IMVF in partnership with Bansang Youth Center was on a day long Caravan Tour on irregular migration sensitization targeting the communities of Bansang and the surrounding villages. Amie Lowe, Bansang Youth Center Animator for IMVF talking about the aims of the tour.</p>
+   
+           <!-- Trigger/Open The Modal -->
+           <button id="btn-video20" class="btn-video" onclick="video(myModal20)">Ver vídeo</button>
+   
+           <!-- The Modal -->
+           <div id="myModal20" class="modal">
+   
+           <!-- Modal content -->
+           <div class="modal-content">
+               <span class="close">&times;</span>
+               <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+               src="https://www.youtube.com/embed/NU5K7Z9BYHc?rel=0&enablejsapi=1"
+               frameborder="0" allowfullscreen></iframe>
+           </div>
+   
+           </div>
+       </div>
+
+       <div style=" padding: 0px 15px;">
+            <img src="img/sheriffo-mboge.svg">
+            <p class="nomes-testemunhos">Sheriffo Mboge </p>
+            <p>Sheriffo Mboge, NBR regional program officer from the National Youth Council on the importance of having sensitization campaigns about the available Tekki Fii grants in his Region.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video21" class="btn-video" onclick="video(myModal21)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal21" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/-0ioRqRw_U8?rel=0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+    </div>
+   
+
+
+
+
+    <p class="imvf-titulo-2">2.3 Schools for social cohesion programme</p>
+
+    <p class="imvf-subtitulo">The activity</p>
+
+    <div class="imvf-texto-corrido">
+         <p>Schools were engaged as a key stage to promote mindset and behavioural change across generations by mobilising the overall school community - students, teachers, families and the schools’ surrounding communities. Activities were based on three thematic areas:</p>
+     </div>
+
+
+     <div class="imvf-tres-graficos">
+        <div>
+            <img src="img/agrobusiness.svg">
+            <p style="color: #006193; margin-top: 0;"><b>Agribusiness</b></p>
+            <p>activities included training in agro food processing, visit to companies of the agriculture sector, provision of inputs, tools, fencing and improvement of water infrastructures of schools vegetable gardens;</p>
+        </div>
+        <div>
+            <img src="img/sports.svg">
+            <p style="color: #006193; margin-top: 0;"><b>Sports</b></p>
+            <p>activities included training in sports for development, provision of equipment and improvement of sports facilities, interschool football tournaments;</p>
+        </div>
+        <div>
+            <img src="img/migration.svg">
+            <p style="color: #006193; margin-top: 0;"><b>Migration</b></p>
+            <p>activities included training of teachers, development and recording of drama plays, video and poetry events, open discussions, among many others. The activities on migration reached both to mainstream schools (25) and madarassas (58).</p>
+        </div>
+
+     </div>
+     
+     <p class="imvf-subtitulo">Key achievements</p>
+
+     <div class="imvf-texto-corrido">
+        <ul>
+            <li>93 awareness raising activities on migration at school or community level and 2 inter-school sports tournaments supported</li>
+            <li>Learning and teaching experiences improved: vegetable gardens became a place for practical learning experiences.</li>
+            <li>Some vegetable gardens were able to generate revenue and to establish trading channels with the communities.</li>
+            <li>8 schools with improved water access facilities</li>
+            <li>Interregional school sports tournaments promoted</li>
+            <li>Pioneer outreach to madarassas communities</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Lessons learned</p>
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>the school is a key space to promote the change of narratives and attitudes and, by engaging the overall school community, it has the potential to generate systemic change</li>
+            <li>target the school community at madarassas is key to reach to youth vulnerable to irregular migration</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Testemunhos:</p>  
+    
+
+    <br><br>
+    <div class="imvf-2-testemunhos">
+       <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+        <p class="imvf-subtitulo">Returnees:</p>
+           <img src="img/seedy-sage.svg">
+           <p class="nomes-testemunhos">Seedy Sage</p>
+           <p>Seedy Sage, a returnee explains why he came out and shares his backway journey with participants of training of teachers for migration.</p>
+   
+           <!-- Trigger/Open The Modal -->
+           <button id="btn-video22" class="btn-video" onclick="video(myModal22)">Ver vídeo</button>
+   
+           <!-- The Modal -->
+           <div id="myModal22" class="modal">
+   
+           <!-- Modal content -->
+           <div class="modal-content">
+               <span class="close">&times;</span>
+               <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+               src="https://www.youtube.com/embed/vAdFVt44AtI?rel=0&enablejsapi=1"
+               frameborder="0" allowfullscreen></iframe>
+           </div>
+   
+           </div>
+       </div>
+
+       <div style="padding: 0px 15px;">
+            <p class="imvf-subtitulo">Migration:</p>
+            <img src="img/hulaymatou-njim.svg">
+            <p class="nomes-testemunhos">Hulaymatou Njim </p>
+            <p>IMVF in partnership with Activista The Gambia through the Tekki Fii - Building a Future: Make it in The Gambia project in The Gambia conducted a training of teachers on irregular migration. On the final day of the training we spoke to one of the participants, Hulaymatou Njim.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video23" class="btn-video" onclick="video(myModal23)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal23" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/xmHykf2D-sY?rel=0&enablejsapi=1" title="Hulaymatou Njim | IMVF | #TekkiFii​​​​​ – Make it in The Gambia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <p class="imvf-subtitulo">SPORTS FOR DEVELOPMENT :</p>
+
+    <div class="imvf-2-testemunhos">
+
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+             
+             <img src="img/pa-modou-ngum.svg">
+             <p class="nomes-testemunhos">Pa Modou Ngum </p>
+             <p>"Tekki Fii is doing a lot in helping our youth and we definitely apreciate it", Pa Modou Ngum, Regional Coordinator of Secondary School Sports.</p>
+ 
+             <!-- Trigger/Open The Modal -->
+             <button id="btn-video24" class="btn-video" onclick="video(myModal24)">Ver vídeo</button>
+ 
+             <!-- The Modal -->
+             <div id="myModal24" class="modal">
+ 
+             <!-- Modal content -->
+             <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Sv8vPXDeOE4?rel=0&enablejsapi=1" title="Pa Modou Ngum | IMVF | #TekkiFii​​​​​​ – Make it in The Gambia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+             </div>
+ 
+             </div>
+         </div>
+
+         <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+             
+            <img src="img/abdouli-sowe.svg">
+            <p class="nomes-testemunhos">Abdouli Sowe</p>
+            <p>"We are really happy of this gesture [the delivery of sports equipment and material] because it will also improve teaching and learning in classroom", Abdouli Sowe, Head of Sports Department in Jareng Upper, Senior and Secondary School.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video25" class="btn-video" onclick="video(myModal25)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal25" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/M1TW00RVCeU?rel=0&enablejsapi=1" title="Abdouli Sowe | IMVF | #TekkiFii​​​​​​ – Make it in The Gambia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+     </div>
+
+     <p class="imvf-subtitulo">WORK ON SCHOOLS’ VEGETABLE GARDENS :</p>
+
+    <div class="imvf-1-testemunhos">
+
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+             
+             <img src="img/mr-akeem.svg">
+             <p class="nomes-testemunhos">Mr. Akeem</p>
+             <p>IMVF and partners, through the Tekki Fii Project, are supporting school gardens with agriculture tools, seeds, and garden maintenance supplies to encourage students into the agribusiness sector and to facilitate the learning of agriculture. Mr. Akeem is an agricultural science teacher at Tahir Upper and Senior Secondary School, and this is what he has to say about the support.</p>
+ 
+             <!-- Trigger/Open The Modal -->
+             <button id="btn-video26" class="btn-video" onclick="video(myModal26)">Ver vídeo</button>
+ 
+             <!-- The Modal -->
+             <div id="myModal26" class="modal">
+ 
+             <!-- Modal content -->
+             <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Z5nvEhJCWb8?rel=0&enablejsapi=1" title="Mr. Akeem | IMVF | #TekkiFii​​​​​ – Make it in The Gambia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+             </div>
+ 
+             </div>
+         </div>
+     </div>
+
+    
+    <p class="imvf-titulo">5. 	CONTINUTY OF THE RESULTS:</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The intervention was highly grounded on a capacitation principle and on the engagement of national and regional stakeholders who have the potential to continue with the development procedures initiated or reinforced during the project.</li>
+            <li>At the level of access to finance, development partners and private sector agents are already absorbing the project participants process of empowerment or for the provision of new services, according with their new economic capacity. Also, the specific mechanisms of access to finance put in place by the project – namely, the grants and the start-up kits, both based on a selection procedure – have been replicated by other institutions.</li>
+            <li>A monitoring system of project participants put in place that also engaged the regional agriculture structures. These structures have manifested the interest to continue monitoring the project participants.</li>
+            <li>Training centres, youth centres, and schools were supported in a way that allowed their immediate capacity to provide services, but also to generate income. While financial autonomy is not ensured, it was encouraged the development of strategies to diminish their dependency from external support.</li>
+            <li>A revolving fund was created in vegetable gardens, which established significant savings at the garden group level, to be invested in further acquisitions of supplies or for the maintenance of the infra-structures.</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">Testemunhos:</p>
+
+    <div class="imvf-3-testemunhos">
+
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+             
+             <img src="img/fatoumatta-bah.svg">
+             <p class="nomes-testemunhos">Fatoumatta O. Bah</p>
+             <p>Fatoumatta O. Bah, an agribusiness beneficiary from NBR who started her business in 2020 commends Tekki Fii, and talks about her growing capacities as a female animal husbandry proprietor and plans on empowering more females in her field alongside creating job opportunities in the near future.</p>
+ 
+             <!-- Trigger/Open The Modal -->
+             <button id="btn-video27" class="btn-video" onclick="video(myModal27)">Ver vídeo</button>
+ 
+             <!-- The Modal -->
+             <div id="myModal27" class="modal">
+ 
+             <!-- Modal content -->
+             <div class="modal-content">
+                 <span class="close">&times;</span>
+                 <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                 src="https://www.youtube.com/embed/91KrrbR-s4E?rel=0&enablejsapi=1"
+                 frameborder="0" allowfullscreen></iframe>
+             </div>
+ 
+             </div>
+         </div>
+
+         <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+             
+            <img src="img/entrepreneurship-training.svg">
+            <p class="nomes-testemunhos">Entrepreneurship Training </p>
+            <p>After graduation, the most outstanding students supported by Tekki Fii receive an in-kind start-up kit to boost their capacity to create businesses and employment opportunities in the rural areas of The Gambia. Check the video for some of the inspiring stories.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video28" class="btn-video" onclick="video(myModal28)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal28" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/G_3_4PIwGZc?rel=0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+
+        <div style="border-right: 1px dotted rgb(196, 196, 196); padding: 0px 15px;">
+             
+            <img src="img/alieu-jallow.svg">
+            <p class="nomes-testemunhos">Alieu Jallow </p>
+            <p>"Since I acquired the grant, I was able to expand my business by bought more animals. I was able to get better feeds and medications for the animals, so definitely the agro-grant have a gone way in expanding my business and then ensuring that the business is sustainable.", Alieu Jallow, agro-grant beneficiary.</p>
+
+            <!-- Trigger/Open The Modal -->
+            <button id="btn-video29" class="btn-video" onclick="video(myModal29)">Ver vídeo</button>
+
+            <!-- The Modal -->
+            <div id="myModal29" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/yI846MgVOgw?rel=0&enablejsapi=1"
+                frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            </div>
+        </div>
+     </div>
+
+
+    <p class="imvf-titulo">6. 	LESSONS LEARNED</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The decentralisation of activities was key for the promotion of opportunities in the country. The adjustment to local languages and the inclusion of illiterate population ensured that no one was left behind.</li>
+            <li>The attention for the decentralization of suppliers, factoring in different urban/rural costs but also transportation costs, has proved to be beneficial. A positive side effect of the project has been the support to local businesses via the purchases made.</li>
+            <li>Some examples of linkages with the private sector (e.g. availability to receive internships; funding of construction works), bring confidence that it is possible to strengthen cross sector partnerships for development goals.</li>
+            <li>While the implementation of positive discrimination measures targeted to returnees were initially discarded to avoid increased stigmatization at the community level, it became evident that this is a segment of the population with characteristics that often call for particular economic, health and social measures. The Project has adjusted the intervention to ensure a greater inclusion of returnees.</li>
+            <li>Strategies were designed to address more than one root cause of irregular migration.</li>
+            <li>The interlinkage of activities has ensured an integrated approach project participantsproject participantsand promoted systemic change.</li>
+            <li>Methodologies such as ToT and peer-to-peer coaching were crucial to promote horizontal learning processes adjusted to local realities.</li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="parallax-1">
+        <div class="texto-parallax">
+            <p class="imvf-titulo" style="margin-left: 10%; text-align: right; color: #c1c1c1;">Happening now in The Gambia🇬🇲</p>
+            <p class="imvf-entrada" style="margin-left: 10%; font-size: 16px; text-align: right; color: #bababa">Today, #IMVF through the #TekkiFii project is holding its first Agro and Mini grantees convergence at the AFPRC general hospital hall in Farafenni, North Bank Region.</p>
+            <p class="credit" style="text-align: right; padding: 5px; margin-top: -30px; text-shadow: 1px 1px 2px black; color: #b9b9b9; bottom: 0px; position: absolute; right: 0;">	Foto: IMVF</p>
+        </div>
+    </div>
+
+    </div>
+   
+<br><br><br><br>
+
+<div class="navegacao">
+   <div class="separador" id="3">
+       <img src="img/conclusion.png">
+   </div>
+
+   <p class="imvf-titulo-tema">CONCLUSION</p>
+
+    <p class="imvf-titulo">7. 	KEY FINDINGS OF THE FINAL EXTERNAL EVALUATION</p>
+
+    <div class="imvf-texto-corrido">
+        <p>The purpose of the evaluation was to assess the relevance, effectiveness, efficiency, contribution to impact, and sustainability and transferability of the Tekki Fii project by examining the strategies and implementation processes; analysing the achievement of the outcomes; and understanding the perceived impact according to the participants and key stakeholders.</p>
+    </div>
+
+    <p class="imvf-subtitulo">RELEVANCE</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The project contributes to different commitments undertaken at the international level.</li>
+            <li>It is consistent with the priorities of the EUTF for Africa and with local initiatives.</li>
+            <li>It has addressed some of the most pressing economic needs of vulnerable rural populations.</li>
+            <li>It took measures to promote that all the project participants could participate in equal conditions.</li>
+            <li>Strategies were designed to address more than one root cause of irregular migration.</li>
+            <li>Some actions contributed to gender and youth mainstreaming.</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">EFFECTIVENESS</p>
+
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The project achieved the 93% of the outcome and output indicators.</li>
+            <li>It has a comprehensive strategy in terms of areas and levels of intervention.</li>
+            <li>Throughout the project some adaptations were made to mitigate the challenges that some vegetable gardens faced in terms of water supply and fencing, which contributed to promote a shift to a sustainable market-oriented agriculture</li>
+            <li>In the incorporation of a value chain approach, it gave greater weight to actions aimed at strengthening the production component.</li>
+            <li>The communication strategy was effective; it included various channels to reach the project participants</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">EFFICIENCY</p>
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The project allowed and encouraged the meaningful engagement of key government agencies in the different stages of the project.</li>
+            <li>The coaching and monitoring of grantees, schools, and vegetable gardens are key factors that contributed to the success of the agribusiness component.</li>
+            <li>Delays in the completion of rehabilitation activities and communication issues with youth centres and multipurpose halls hampered the contribution of the project to strengthening their capacity.</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">CONTRIBUTION TO IMPACT</p>
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li><b>Individual level (grantees and vegetable gardens):</b> increases in income generation, knowledge and skills; emergence of referents within the community; changes in youth mindset towards agriculture; improvements in the availability of inputs and tools and in the capacity for self-organization.</li>
+
+            <li><b>Immediate environment level:</b> improvements in the well-being of families and in the availability of reintegration opportunities for returnees; emergence of role models to encourage entrepreneurship in agriculture; creation of employment opportunities for other youth; improvements in the cohesion of women's groups.</li>
+
+            <li><b>Community level (schools, skills training centres, radios):</b> they have the potential to generate systemic changes. They brought together different community actors to engage in dialogue about the risks of irregular migration and the economic development opportunities in The Gambia.</li>
+        </ul>
+    </div>
+
+    <p class="imvf-subtitulo">SUSTAINABILITY AND TRANSFERABILITY</p>
+    <div class="imvf-texto-corrido">
+        <ul>
+            <li>The provision of seed capital, the acquisition of knowledge and the development of skills have laid a solid foundation that can help sustain income-generating activities.</li>
+
+            <li>The monitoring and coaching strategy has the potential to continue supporting the growth of the project participants and to optimize a model to support other farmers.</li>
+            
+            <li>Leaving capacities installed in structures favours the transmission of information and the development of skills in the long term.</li>
+
+            <li>The activities implemented with the purposes of fostering community and intergenerational dialogue, require the support of the community to be sustainable over time.</li>
+        </ul>
+
+    </div>
+
+ <!--you can copy the below code to your htm 
+page-----------------------------begin--->
+<!--change the width and height value as you want.--> 
+<!-- Do change "index.htm" to your real html name of the flippingbook--> 
+<iframe  style="width:100%;height:600px"  src="http://online.anyflip.com/wzcd/rxjt/index.html"  
+seamless="seamless" scrolling="no" frameborder="0" 
+allowtransparency="true"></iframe>
+
+<!--you can copy the above code to your htm 
+page-----------------------------end--->  
+
+
+
+        <p class="imvf-titulo">8. 	TESTIMONIES</p>
+    <pre>INSERT:
+        7 CASE STUDIES – LIFE STORIES 
+        </pre>
+
+
+
+</div>
+
+
+
+    <p class="imvf-titulo">Total institutional beneficiaries</p>
+    <div id="container-j" style="max-width: 900px; margin: 0 auto;" ></div> 
+    
+
+    
+  
+
+            <div class="table-wrapper">
+            <table class="fl-table" style="width:100%">
+                <thead>		
+                    <tr>		
+                        <th>Grants	</th>
+                        <th>Gardens	</th>
+                        <th>Trainings	</th>
+                        <th>Schools	</th>
+                    </tr>		
+                </thead>		
+                <tbody>		
+                    <tr>
+                        <td>Successful entrepreneurs mobilised as role model in awareness raising campaigns<br>Radios mobilised to inform grant opportunities</td>
+                        <td>Beneficiaries of awareness raising campaigns (grants, migration) provided by youth groups<br>Young entrepreneurs received with power tillers and tricycles to provide services to gardens, similar to a grant scheme<br>Radios mobilised to inform small holder farmers	</td>
+                        <td>Most successful trainees provided with a start-up kit similar to a mini-grant<br>Trainees supported to business development with entrepreneurship training<br>Beneficiaries of migration awareness raising provided by youth groups<br>youth groups mobilised to ensure recruitment campaigns in most remote locations<br>Radios mobilised to inform training opportunities</td>
+                        <td>Youth groups mobilised to provide migration awareness raising campaigns in koranic schools<br>Radios airing drama plays developed by the schools</td>
+                    </tr>		
+                <tr>		
+                    <td>Community Outreach<br>Schools<br>Radios	</td>
+                    <td>Community Outreach<br>Grants<br>Radios	</td>
+                    <td>Grants
+                        <br>Grants
+                        <br>Community Outreach
+                        <br>Community Outreach</td>
+                    <td>
+                        Radios<br>
+                        Community Outreach<br>
+                        Radios
+                    </td>
+                </tr>		
+                </tbody>
+            </table> 
+        </div>
+        
+    
+
+         
+
+
+    
+    <div style="max-width: 100%; margin: 0 auto">
+        <footer class="fonte-footer" style="color: #626262">
+            <div style="max-width: 1250px; margin: 0 auto; padding: 0px 5px">
+                <div class="fontes" style="text-align: center; width: 100%; margin: 0 auto">Fonte: Our World in Data; Statista; FAO; NASA; ONU; USGS; The World Bank; WWF; IPMA; Pordata; Virginia Institute of Marine Science; <i>Twenty Questions and Answers About the Ozone Layer: 2014 Update, Montreal Protocol Scientific Assessment Panel</i></div>
+            </div>
+        </footer>
+    </div>
+    <div id="ficha-tecnica" style="background-color: #efefef; color: gray; font-size: 14px; text-align: center; margin: 0 auto;"><br>
+        <div style="max-width: 900px; margin: 0 auto;"><br>
+        <p style="margin-bottom: 10px;"><b>FICHA TÉCNICA</b></p>
+        <p style="margin-bottom: 0px; padding-bottom: 20px">
+        <b>Textos e dados:</b>
+        <a href="https://www.publico.pt/autor/nicolau-ferreira">Nicolau Ferreira</a>
+        <b>Ilustrações:</b>
+        <a href="https://www.publico.pt/autor/jose-alves">José Alves</a>
+        <b>Infografia:</b>
+        <a href="https://www.publico.pt/autor/francisco-f-lopes">Francisco Lopes</a> e
+        <a href="https://www.publico.pt/autor/jose-alves">José Alves</a><br>
+        <b>Desenvolvimento web:</b>
+        <a href="https://www.publico.pt/autor/francisco-f-lopes">Francisco Lopes</a> e
+        <a href="https://www.publico.pt/autor/jose-alves">José Alves</a>
+            
+        </p>
+        </div>
+    </div>
+
+ </div>
+    
+<script>
+$(document).ready(function() {
+  $('tbody').scroll(function(e) { //detect a scroll event on the tbody
+    $('thead').css("left", -$("tbody").scrollLeft()); //fix the thead relative to the body scrolling
+    $('thead th').css("left", $("tbody").scrollLeft()); //fix the first cell of the header
+    $('tbody td:first-child').css("left", $("tbody").scrollLeft()); //fix the first column of tdbody
+  });
+});    
+
+      
+// Get the modal
+var modal1 = 0;
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// When the user clicks on the button, open the modal
+
+function video(ref){
+
+    var modal = document.getElementById(ref.id);
+
+    modal.style.display = "block";
+
+    modal1 = modal;
+}
+
+
+
+
+
+
+
+let elementsArray = document.getElementsByClassName("close");
+
+for (let i = 0; i < elementsArray.length; i++) {
+
+    var span = document.getElementsByClassName("close")[i];
+
+    span.addEventListener("click", function() {
+
+        var modal1 = document.getElementById("myModal" + (i+1));
+
+        modal1.style.display = "none";
+
+        var stopAllYouTubeVideos = () => { 
+        var iframes = document.querySelectorAll('iframe');
+        Array.prototype.forEach.call(iframes, iframe => { 
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', 
+        func: 'pauseVideo' }), '*');
+        });
+        }
+        stopAllYouTubeVideos();
+        
+    });
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+
+    var stopAllYouTubeVideos = () => { 
+        var iframes = document.querySelectorAll('iframe');
+        Array.prototype.forEach.call(iframes, iframe => { 
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', 
+        func: 'pauseVideo' }), '*');
+        });
+        }
+    stopAllYouTubeVideos();
+    
+  }
+}
+
+
+Highcharts.setOptions({
+    lang: {
+        drillUpText:"< Voltar ao total por país" ,
+        numericSymbols: null,
+        thousandsSep: '.',
+        decimalPoint: ',',
+        months: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+        shortMonths: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        weekdays: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
+    },
+    colors: ['#00A6E2','#F1674D', '#7CB5E3','#8A8374','#ffffff', '#0072bc', '#2f500d', '#91be64', 'rgba(238, 191, 127, 0.8)',  '#f7933d', '#ed64a9'], //ORDEM DAS CORES DO QUEIJO
+   // '#BFCD79','#9CDBEE','#74C2EC','#BE90B6','#F49AC1','#75C7CB','#FBB67C','#F1CA72',
+    //'#FBC8B4','#FED5B2','#F6DCA4','#ACDBDC','#D7DEAA','#C8EAF4','#ACD7F3','#DAC3D6','#F9CBDF' - CORES MAIS CLARAS
+    //'#D1D3D4','#D2CDC6','#DCD8D0','#F3F0ED' - CORES NEUTRAS
+
+});   
+              
+
+         
+Highcharts.chart('container-j', {
+     chart: {
+        backgroundColor: null,
+        type: 'bubble',
+        height: 200,
+    },
+    title: {text: null
+    },
+    subtitle: {text: null
+    },
+    credits: {enabled: false},
+    navigation:{
+        buttonOptions:{
+            enabled: false
+        }
+    },
+    xAxis: {
+        tickWidth:0,
+        lineWidth: 0,
+        lineColor: 'rgb(230, 230, 230)',
+        visible: false,
+        crosshair: false,
+        labels: {
+            align:'center',
+            reserveSpace: true,
+            style: {
+                fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                color: '#8e8e8e',
+                fontWeight: '400',
+                fontSize: '16px'
+                }
+            },
+        },
+    yAxis: { // Primary yAxis
+        tickLength:40,
+        title:{enabled: false},
+        min:-5,
+        max:5,
+        visible: false,
+        tickColor:'rgb(57, 57, 57)',
+        gridLineColor:'rgb(57, 57, 57)',
+        tickWidth:1, // Traços da escala
+        lineWidth: 0, //Linha vertical da escala
+        labels: {
+            align: 'left',
+            x: -40,
+            y: -3,
+            format: '{value}',
+            style: {
+                fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                color: '#585858',
+                textOutline:'0px',
+                fontWeight: 'regular',
+                fontSize: '14px',
+            }
+        },
+    },
+    tooltip: {
+        enabled: true,
+        formatter: function(){
+            var tooltipText = '<span style="text-align:center">' + this.key + '</span><br>';
+            var currentValue = this.point.z;
+            if( currentValue > 9999 ) {
+                currentValue = Highcharts.numberFormat( currentValue, 0, ',' , '.' );
+            }
+            else{currentValue = Highcharts.numberFormat( currentValue, 0, ',' , '' );}
+            tooltipText = tooltipText + '<span style="font-size:18px;text-align:center"> <b>' + currentValue + '</b></span>';
+            return tooltipText;
+            
+        }, // PONTO NOS NÚMEROS ACIMA DAS DEZENAS DE MILHAR - TOOLTIP
+        outside: true,    
+        headerFormat: '{point.key}:<br/>',
+        valueDecimals: 0,
+        borderRadius: 0,
+        hideDelay: 200,
+        borderWidth: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        shadow: false,
+        useHTML: true,
+        style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline:'0px',
+            fontWeight: 'regular',
+            fontSize: '16px'
+        }
+    },
+    legend: {
+        enabled: false,   // MOSTRAR/ESCONDER A LEGENDA
+        align: 'right',
+        layout: 'vertical',
+        verticalAlign: 'top',
+        itemMarginTop: 10,
+        bubbleLegend: {
+            legendIndex: 4,
+            enabled: false,
+            connectorDistance: 40,
+            borderWidth: 3,
+            connectorWidth: 3,
+            labels: {
+                align: 'center'
+            }
+        }
+    },
+    plotOptions: {
+        series: {
+            maxSize:'45%',
+            minSize:50,
+            borderWidth: 0,
+            lineWidth:0, //espessura da linha
+            pointPadding: 0.05,
+            groupPadding: 0.1,
+            marker: {
+                enabled: true, // pontos de dados
+                symbol: 'circle'
+                },
+            dataLabels: {
+                x: 0,
+                y: 60,
+                //format: '{point.y:,.0f}',
+                enabled: true,
+                align: 'center',
+                format: '{point.name}',
+                useHTML: true,
+                style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#acacac',
+                    fontWeight: '400',
+                    fontSize: '13px',
+                    textAlign:'center'
+                    },
+                },
+        },
+      },
+   series: [{
+      color: '#19AA74',
+      name: '',
+       data: [{ x: 0, y: 0, z: 46, 
+               name: '<span style="text-align:center">Vegetable<br>Gardens</span>' },
+             { x: 1, y: 0, z: 5, 
+              name: '<span style="text-align:center">Training<br>centers</span>' },
+             { x: 2, y: 0, z: 8, 
+              name: '<span style="text-align:center">Youth groups engaged<br>in agribusiness activities</span>'},
+             { x: 3, y: 0, z: 2, 
+              name: '<span style="text-align:center">processing<br>centers</span>' },
+             { x: 4, y: 0, z: 5, 
+              name: '<span style="text-align:center">Youth<br>centers</span>' },
+             { x: 5, y: 0, z: 83, 
+              name: '<span style="text-align:center">schools<br>/madrassas</span>'},
+             { x: 6, y: 0, z: 5, 
+              name: '<span style="text-align:center">radios</span>'},
+],
+  }, ],
+    responsive: {
+        rules: [{
+            condition: {maxWidth: 450
+            },
+            chartOptions: {
+                chart:{height:100},
+                  plotOptions: {
+        series: {
+            maxSize:'40%',
+            minSize:8,}},
+                yAxis: {
+                    min:-5,
+                    max:15,
+                },
+            },
+        }]
+    }
+});  
+        
+
+Highcharts.chart('container-queijo-emprego', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie',
+        marginBottom:50,
+         backgroundColor: null,
+        renderTo: 'container-queijo-emprego'
+    },
+    title: {
+        verticalAlign: 'middle',
+        floating: true,
+        y:-2,
+        text: '340<br>TOTAL<br><span style="font-weight: lighter;color:gray">65<br>Returnees<br>(M/F)</span>'
+    },
+    tooltip: {
+        enabled: true,
+        pointFormat: '<b>{point.y:.f}</b>',
+        outside: true,          
+        headerFormat: '{point.key}<br/>',
+        valueDecimals: 0,
+        borderRadius: 0,
+        hideDelay: 200,
+        borderWidth: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        shadow: false,
+        useHTML: true,
+        style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline:'0px',
+            fontWeight: 'regular',
+            fontSize: '16px'
+        }
+    },
+    
+    legend: {
+      floating: true,
+        enabled: false,   // MOSTRAR/ESCONDER A LEGENDA
+        align: 'center',
+        verticalAlign: 'top',
+        y:-15,
+        useHTML: true,
+        itemStyle:{   
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            fontWeight: '400',
+            fontSize: '15px'
+        }
+    },
+    accessibility: {
+        point: {
+            valueSuffix: ''
+        }
+    },
+        navigation:{
+        buttonOptions:{
+            enabled: false}
+    },
+    credits: {enabled: false},
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            showInLegend: true,
+            allowPointSelect: false,
+            cursor: 'pointer',
+            borderWidth: 3,
+            innerSize: '50%',
+            dataLabels: {
+                color:'2f2f2f',
+                useHTML : true,
+                //distance: '-30%',
+                //crookDistance: '90%',
+                //connectorShape: 'fixedOffset',
+                crop: false,
+                overflow: 'allow',
+                enabled: true,
+                alignTo: 'pie',
+                softConnector: false,
+                enabled:true,
+                connectorColor: 'rgba(0, 0, 255, 0)',
+                format: '{point.name}<br>{point.percentage:.0f}<span style="font-weight: lighter;">%</span>',
+                style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#4d4d4d',
+                    textOutline:'0px',
+                    fontWeight: '400',
+                    fontSize: '1em'
+                }
+            }
+        }
+    },
+    series: [{
+        name: '',
+        size: '90%',
+        innerSize: '50%',
+        colorByPoint: true,
+        data: [{
+            name: 'Male',
+            color: '#B40019',
+            y: 244,
+        }, {
+            name: 'Female',
+            color: '#FF8700',
+            y: 96,
+        }]
+    }]
+});    
+    
+Highcharts.chart('container-queijo-profile', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie',
+        marginBottom:50,
+         backgroundColor: null,
+    },
+    title: {
+        verticalAlign: 'middle',
+        floating: true,
+        y:-2,
+        text: '141<br>TOTAL'
+    },
+    tooltip: {
+        enabled: true,
+        pointFormat: '<b>{point.y:.f}</b>',
+        outside: true,          
+        headerFormat: '{point.key}<br/>',
+        valueDecimals: 0,
+        borderRadius: 0,
+        hideDelay: 200,
+        borderWidth: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        shadow: false,
+        useHTML: true,
+        style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline:'0px',
+            fontWeight: 'regular',
+            fontSize: '16px'
+        }
+    },
+    
+    legend: {
+      floating: true,
+        enabled: false,   // MOSTRAR/ESCONDER A LEGENDA
+        align: 'center',
+        verticalAlign: 'top',
+        y:-15,
+        useHTML: true,
+        itemStyle:{   
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            fontWeight: '400',
+            fontSize: '15px'
+        }
+    },
+    accessibility: {
+        point: {
+            valueSuffix: ''
+        }
+    },
+        navigation:{
+        buttonOptions:{
+            enabled: false}
+    },
+    credits: {enabled: false},
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            showInLegend: true,
+            allowPointSelect: false,
+            cursor: 'pointer',
+            borderWidth: 3,
+            innerSize: '50%',
+            dataLabels: {
+                color:'2f2f2f',
+                useHTML : true,
+                //distance: '-30%',
+                //crookDistance: '90%',
+                //connectorShape: 'fixedOffset',
+                enabled: true,
+                alignTo: 'pie',
+                softConnector: false,
+                connectorColor: 'rgba(0, 0, 255, 0)',
+                format: '{point.name}<br><b>{point.percentage:.0f}</b><span style="font-weight: lighter;">%</span>',
+                style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#4d4d4d',
+                    textOutline:'0px',
+                    fontWeight: '400',
+                    fontSize: '1em'
+                }
+            }
+        }
+    },
+    series: [{
+        name: '',
+        size: '70%',
+        innerSize: '50%',
+        colorByPoint: true,
+        data: [{
+            name: 'Male',
+            color: '#B40019',
+            y: 141,
+        }, {
+            name: 'Female',
+            color: '#FF8700',
+            y: 42,
+        }]
+    }]
+});    
+  
+Highcharts.chart('container-queijo-full-part', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie',
+        marginBottom:50,
+         backgroundColor: null,
+    },
+    title: {
+        verticalAlign: 'middle',
+        floating: true,
+        y:-2,
+        text: ''
+    },
+    tooltip: {
+        enabled: false,
+        pointFormat: '<b>{point.y:.f}%</b>',
+        outside: true,          
+        headerFormat: '{point.key}<br/>',
+        valueDecimals: 0,
+        borderRadius: 0,
+        hideDelay: 200,
+        borderWidth: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        shadow: false,
+        useHTML: true,
+        style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline:'0px',
+            fontWeight: 'regular',
+            fontSize: '16px'
+        }
+    },
+    
+    legend: {
+      floating: true,
+        enabled: false,   // MOSTRAR/ESCONDER A LEGENDA
+        align: 'center',
+        verticalAlign: 'top',
+        y:-15,
+        useHTML: true,
+        itemStyle:{   
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            fontWeight: '400',
+            fontSize: '15px'
+        }
+    },
+    accessibility: {
+        point: {
+            valueSuffix: ''
+        }
+    },
+    navigation:{
+        buttonOptions:{
+            enabled: false}
+    },
+    credits: {enabled: false},
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            showInLegend: true,
+            allowPointSelect: false,
+            cursor: 'pointer',
+            borderWidth: 3,
+            innerSize: '50%',
+            dataLabels: {
+                color:'2f2f2f',
+                useHTML : true,
+                //distance: '-30%',
+                //crookDistance: '90%',
+                //connectorShape: 'fixedOffset',
+                
+                enabled: true,
+                alignTo: 'pie',
+                softConnector: false,
+                connectorColor: 'rgba(0, 0, 255, 0)',
+                format: '{point.name}<br><b>{point.percentage:.0f}</b><span style="font-weight: lighter;">%</span>',
+                style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#4d4d4d',
+                    textOutline:'0px',
+                    fontWeight: '400',
+                    fontSize: '1em'
+                }
+            }
+        }
+    },
+    series: [{
+        name: '',
+        size: '70%',
+        innerSize: '50%',
+        colorByPoint: true,
+        data: [{
+            name: 'Full-time',
+            color: '#B40019',
+            y: 42,
+        }, {
+            name: 'Part-time',
+            color: '#FF8700',
+            y: 58,
+        }]
+    }]
+});    
+   
+(async () => {
+
+    const topology = await fetch(
+        'https://code.highcharts.com/mapdata/countries/gm/gm-all.topo.json'
+    ).then(response => response.json());
+
+    // Prepare demo data. The data is joined to map using value of 'hc-key'
+    // property by default. See API docs for 'joinBy' for more info on linking
+    // data and map.
+    const data = [
+        ['gm-mc', 2], ['gm-ur', 5], ['gm-bj', 5], ['gm-lr', 4], ['gm-wc', 1], ['gm-nb', 5]
+    ];
+    // Create the chart
+    Highcharts.mapChart('container-gambia', {
+        chart: {
+            backgroundColor: null,
+            height: 200,
+            marginTop:30,
+            map: topology,
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        navigation:{
+            buttonOptions:{
+                enabled: false
+            }
+        },
+        title: {
+            text: ''
+        },
+        legend: {
+            enabled: false
+        },
+        /*subtitle: {
+            text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/gm/gm-all.topo.json">Gambia</a>'
+        },*/
+        mapNavigation: {
+            enabled: false,
+            buttonOptions: {
+                verticalAlign: 'bottom',
+            },
+        },
+        colorAxis: {
+            min: 1,
+            max: 6,
+            type: 'logarithmic',
+            minColor: '#19aa74',
+            maxColor: '#19aa74',
+        },
+       
+        tooltip: {
+            enabled:true,
+            //backgroundColor: white,
+            borderWidth: 0,
+            shadow: false,
+            useHTML: true,
+            style: {
+                padding: 0
+            },
+            headerFormat: '',
+            pointFormat: '<span style="font-size:14px;text-transform:uppercase">{series.name}</span><br><hr>{point.name}<b>{point.n1}</b><br><b>{point.n2}</b><br><b>{point.n3}</b><br><b>{point.n4}</b><br><b>{point.n5}</b>',
+            //footerFormat: '<span style="font-size:10px">Source: Wikipedia</span><br/>',
+            style: {
+                fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                color: '#2f2f2f',
+                textOutline:'0px',
+                fontWeight: 'regular',
+                fontSize: '16px'
+            }
+        },
+
+      series: [{
+            name: 'Region',
+            borderColor: '#ffffff',
+            nullColor: 'rgba(109, 211, 91, 0.3)',
+            showInLegend: false,
+            dataLabels: { enabled: false },
+            enableMouseTracking: false,
+            borderWidth: 0.5,
+              dataLabels: {
+                  enabled: true,
+                  format: '{point.name}',
+                  style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#2f2f2f',
+                    textOutline:'0px',
+                    fontWeight: 'regular',
+                    fontSize: '13px'
+                }
+            },
+            data: data,
+            },
+          
+        {
+      name: "Components",
+      color: "rgba(255, 255, 255, 0.5)",
+      marker: { symbol: "circle", radius: 8 },
+      type: "mappoint",
+      data: [
+        {
+        
+          lo: "North Bank",
+          lat: 13.516492411983922, 
+          lon: -15.880599555176552,
+          n1: "<span style='color:red'>●</span> Yes",
+          n2: "<span style='color:blue'>●</span> Yes",
+          n3: "<span style='color:gray'>●</span> Yes",
+          n4: "<span style='color:orange'>●</span> Yes",
+          n5: "<span style='color:olive'>●</span> Yes",
+        },
+        {
+          lo: "Upper River",
+          lat: 13.425677710548255, 
+          lon: -14.194264601593419,
+           n1: "<span style='color:red'>●</span> Yes",
+          n2: "<span style='color:blue'>●</span> Yes",
+          n3: "<span style='color:gray'>●</span> Yes",
+          n4: "<span style='color:orange'>●</span> Yes",
+          n5: "<span style='color:olive'>●</span> Yes",
+        },
+        {
+          lo: "Lower River",
+          lat: 13.388273610998112, 
+          lon: -15.84764057255021,
+           n1: "<span style='color:red'>●</span> Yes",
+          n2: "<span style='color:blue'>●</span> No",
+          n3: "<span style='color:gray'>●</span> Yes",
+          n4: "<span style='color:orange'>●</span> Yes",
+          n5: "<span style='color:olive'>●</span> Yes",
+        },
+        {
+          lo: "Central River",
+          lat: 13.564556722042626, 
+          lon: -14.8259121111336,
+           n1: "<span style='color:red'>●</span> Yes",
+          n2: "<span style='color:blue'>●</span> Yes",
+          n3: "<span style='color:gray'>●</span> Yes",
+          n4: "<span style='color:orange'>●</span> Yes",
+          n5: "<span style='color:olive'>●</span> Yes",
+        },
+        {
+          lo: "Banjul",
+          lat: 13.441706450356753, 
+          lon: -16.710067284606165,
+           n1: "<span style='color:red'>●</span> Yes",
+          n2: "<span style='color:blue'>●</span> No",
+          n3: "<span style='color:gray'>●</span> Yes",
+          n4: "<span style='color:orange'>●</span> No",
+          n5: "<span style='color:olive'>●</span> No",
+        },
+        {
+          lo: "West Coast",
+          lat: 13.227904089779233, 
+          lon: -16.226668872753145,
+           n1: "<span style='color:red'>●</span> Yes",
+          n2: "<span style='color:blue'>●</span> No",
+          n3: "<span style='color:gray'>●</span> No",
+          n4: "<span style='color:orange'>●</span> No",
+          n5: "<span style='color:olive'>●</span> No",
+        },
+      ],
+    },
+  ]
+        
+    });
+
+})();
+    
+(async () => {
+
+    const topology = await fetch(
+        'https://code.highcharts.com/mapdata/countries/gm/gm-all.topo.json'
+    ).then(response => response.json());
+
+    // Prepare demo data. The data is joined to map using value of 'hc-key'
+    // property by default. See API docs for 'joinBy' for more info on linking
+    // data and map.
+    const data = [
+        ['gm-mc', 10], ['gm-ur', 10], ['gm-bj', 10], ['gm-lr', 10], ['gm-wc', 10], ['gm-nb', 10]
+    ];
+    // Create the chart
+    Highcharts.mapChart('container-gambia3', {
+        chart: {
+            backgroundColor: null,
+            height: 200,
+            marginTop:30,
+            map: topology,
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        navigation:{
+            buttonOptions:{
+                enabled: false
+            }
+        },
+        title: {
+            text: ''
+        },
+        legend: {
+            enabled: false
+        },
+        /*subtitle: {
+            text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/gm/gm-all.topo.json">Gambia</a>'
+        },*/
+        mapNavigation: {
+            enabled: false,
+            buttonOptions: {
+                verticalAlign: 'bottom',
+            },
+        },
+        colorAxis: {
+            min: 1,
+            max: 6,
+            type: 'logarithmic',
+            minColor: '#19aa74',
+            maxColor: '#19aa74',
+        },
+        tooltip: {
+            enabled:true,
+            //backgroundColor: white,
+            borderWidth: 0,
+            shadow: false,
+            useHTML: true,
+            style: {
+                padding: 0
+            },
+            headerFormat: '',
+            pointFormat: '<span style="font-size:14px;text-transform:uppercase">{series.name}</span><br><hr>{point.name}<b>{point.n1}</b><br><b>{point.n2}</b><br><b>{point.n3}</b><br><b>{point.n4}</b><br><b>{point.n5}</b>',
+            //footerFormat: '<span style="font-size:10px">Source: Wikipedia</span><br/>',
+            style: {
+                fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                color: '#2f2f2f',
+                textOutline:'0px',
+                fontWeight: 'regular',
+                fontSize: '16px'
+            }
+        },
+
+      series: [{
+            name: 'Region',
+            borderColor: '#ffffff',
+            nullColor: 'rgba(109, 211, 91, 0.3)',
+            showInLegend: false,
+            dataLabels: { enabled: false },
+            borderWidth: 0.5,
+            enableMouseTracking: false,
+              dataLabels: {
+                  enabled: true,
+                  format: '{point.name}',
+                  style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#2f2f2f',
+                    textOutline:'0px',
+                    fontWeight: 'regular',
+                    fontSize: '13px'
+                }
+            },
+            data: data,
+            },
+          
+        {
+      name: "Institutional beneficiaries",
+      color: "rgba(255, 255, 255, 0.5)",
+      marker: { symbol: "circle", radius: 8 },
+      type: "mappoint",
+      data: [
+        {
+        
+          lo: "North Bank",
+          lat: 13.516492411983922, 
+          lon: -15.880599555176552,
+          n1: "21 <span style='color:gray'>Vegetable Gardens</span>",
+          n2: "1 <span style='color:gray'>Training centers</span>",
+          n3: "4 <span style='color:gray'>Youth groups engaged in agribusiness activities</span>",
+          n4: "1 <span style='color:gray'>processing centers</span>",
+          n5: "1 <span style='color:gray'>Youth Centers</span>",
+          n6: "20 <span style='color:gray'>schools/madrassas</span>",
+          n7: "2 <span style='color:gray'>radios</span>",
+        },
+        {
+          lo: "Upper River",
+          lat: 13.425677710548255, 
+          lon: -14.194264601593419,
+          n1: "12 <span style='color:gray'>Vegetable Gardens</span>",
+          n2: "2 <span style='color:gray'>Training centers</span>",
+          n3: "- <span style='color:gray'>Youth groups engaged in agribusiness activities</span>",
+          n4: "- <span style='color:gray'>processing centers</span>",
+          n5: "1 <span style='color:gray'>Youth Centers</span>",
+          n6: "20 <span style='color:gray'>schools/madrassas</span>",
+          n7: "- <span style='color:gray'>radios</span>",
+        },
+        {
+          lo: "Lower River",
+          lat: 13.388273610998112, 
+          lon: -15.84764057255021,
+          n1: "- <span style='color:gray'>Vegetable Gardens</span>",
+          n2: "1 <span style='color:gray'>Training centers</span>",
+          n3: "- <span style='color:gray'>Youth groups engaged in agribusiness activities</span>",
+          n4: "- <span style='color:gray'>processing centers</span>",
+          n5: "1 <span style='color:gray'>Youth Centers</span>",
+          n6: "20 <span style='color:gray'>schools/madrassas</span>",
+          n7: "1 <span style='color:gray'>radios</span>",
+        },
+        {
+          lo: "Central River",
+          lat: 13.564556722042626, 
+          lon: -14.8259121111336,
+          n1: "13 <span style='color:gray'>Vegetable Gardens</span>",
+          n2: "1 <span style='color:gray'>Training centers</span>",
+          n3: "4 <span style='color:gray'>Youth groups engaged in agribusiness activities</span>",
+          n4: "1 <span style='color:gray'>processing centers</span>",
+          n5: "2 <span style='color:gray'>Youth Centers</span>",
+          n6: "23 <span style='color:gray'>schools/madrassas</span>",
+          n7: "2 <span style='color:gray'>radios</span>",
+        },
+        {
+          lo: "Banjul",
+          lat: 13.441706450356753, 
+          lon: -16.710067284606165,
+          n1: "- <span style='color:gray'>Vegetable Gardens</span>",
+          n2: "- <span style='color:gray'>Training centers</span>",
+          n3: "- <span style='color:gray'>Youth groups engaged in agribusiness activities</span>",
+          n4: "- <span style='color:gray'>processing centers</span>",
+          n5: "- <span style='color:gray'>Youth Centers</span>",
+          n6: "- <span style='color:gray'>schools/madrassas</span>",
+          n7: "- <span style='color:gray'>radios</span>",
+        },
+        {
+          lo: "West Coast",
+          lat: 13.227904089779233, 
+          lon: -16.226668872753145,
+          n1: "- <span style='color:gray'>Vegetable Gardens</span>",
+          n2: "- <span style='color:gray'>Training centers</span>",
+          n3: "- <span style='color:gray'>Youth groups engaged in agribusiness activities</span>",
+          n4: "- <span style='color:gray'>processing centers</span>",
+          n5: "- <span style='color:gray'>Youth Centers</span>",
+          n6: "- <span style='color:gray'>schools/madrassas</span>",
+          n7: "- <span style='color:gray'>radios</span>",
+        },
+      ],
+    },
+  ]
+        
+    });
+
+})();
+ 
+(async () => {
+
+    const topology = await fetch(
+        'https://code.highcharts.com/mapdata/countries/gm/gm-all.topo.json'
+    ).then(response => response.json());
+
+    // Prepare demo data. The data is joined to map using value of 'hc-key'
+    // property by default. See API docs for 'joinBy' for more info on linking
+    // data and map.
+    const data = [
+        ['gm-mc', 10], ['gm-ur', 10], ['gm-bj', 10], ['gm-lr', 10], ['gm-wc', 10], ['gm-nb', 10]
+    ];
+    // Create the chart
+    Highcharts.mapChart('container-gambia2', {
+        chart: {
+            backgroundColor: null,
+            height: 200,
+            marginTop:30,
+            map: topology,
+        },
+        title: {
+            text: null
+        },
+        subtitle: {
+            text: null
+        },
+        credits: {
+            enabled: false
+        },
+        navigation:{
+            buttonOptions:{
+                enabled: false
+            }
+        },
+        title: {
+            text: ''
+        },
+        legend: {
+            enabled: false
+        },
+        /*subtitle: {
+            text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/gm/gm-all.topo.json">Gambia</a>'
+        },*/
+        mapNavigation: {
+            enabled: false,
+            buttonOptions: {
+                verticalAlign: 'bottom',
+            },
+        },
+        colorAxis: {
+            min: 1,
+            max: 6,
+            type: 'logarithmic',
+            minColor: '#19aa74',
+            maxColor: '#19aa74',
+        },
+       
+        tooltip: {
+            enabled:true,
+            //backgroundColor: white,
+            borderWidth: 0,
+            shadow: false,
+            useHTML: true,
+            style: {
+                padding: 0
+            },
+            headerFormat: '',
+            pointFormat: '<span style="font-size:14px;text-transform:uppercase">{series.name}</span><br><hr>{point.name}<b>{point.n1}</b><br><b>{point.n2}</b><br><b>{point.n3}</b><br><b>{point.n4}</b><br><b>{point.n5}</b>',
+            //footerFormat: '<span style="font-size:10px">Source: Wikipedia</span><br/>',
+            style: {
+                fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                color: '#2f2f2f',
+                textOutline:'0px',
+                fontWeight: 'regular',
+                fontSize: '16px'
+            }
+        },
+
+      series: [{
+            name: 'Region',
+            borderColor: '#ffffff',
+            nullColor: 'rgba(109, 211, 91, 0.3)',
+            showInLegend: false,
+            dataLabels: { enabled: false },
+            enableMouseTracking: false,
+            borderWidth: 0.5,
+              dataLabels: {
+                  enabled: true,
+                  format: '{point.name}',
+                  style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#2f2f2f',
+                    textOutline:'0px',
+                    fontWeight: 'regular',
+                    fontSize: '13px'
+                }
+            },
+            data: data,
+            },
+          
+        {
+      name: "Beneficiaries",
+      color: "rgba(255, 255, 255, 0.5)",  
+      marker: { symbol: "circle", radius: 8 },
+      type: "mappoint",
+      data: [
+        {
+        
+          lo: "North Bank",
+          lat: 13.516492411983922, 
+          lon: -15.880599555176552,
+          n1: "60 <span style='color:gray'>Grantees</span>",
+          n2: "57 <span style='color:gray'>Start up kits</span>",
+          n3: "1 <span style='color:gray'>Rural Youth Awards</span>",
+          n4: "1923 <span style='color:gray'>VG members & other production sites</span>",
+          n5: "110 <span style='color:gray'>Trainees (skills development)</span>",
+          n6: "2452 <span style='color:gray'>Schools</span>",
+          n7: "1208 <span style='color:gray'>Youth groups/outreach activities</span>",
+          n8: "277 <span style='color:gray'>Returnees*</span>",
+        },
+        {
+          lo: "Upper River",
+          lat: 13.425677710548255, 
+          lon: -14.194264601593419,
+          n1: "4 <span style='color:gray'>Grantees</span>",
+          n2: "43 <span style='color:gray'>Start up kits</span>",
+          n3: "2 <span style='color:gray'>Rural Youth Awards</span>",
+          n4: "47 <span style='color:gray'>VG members & other production sites</span>",
+          n5: "83 <span style='color:gray'>Trainees (skills development)</span>",
+          n6: "3057 <span style='color:gray'>Schools</span>",
+          n7: "377 <span style='color:gray'>Youth groups/outreach activities</span>",
+          n8: "277 <span style='color:gray'>Returnees*</span>",
+        },
+        {
+          lo: "Lower River",
+          lat: 13.388273610998112, 
+          lon: -15.84764057255021,
+          n1: "30 <span style='color:gray'>Grantees</span>",
+          n2: "45 <span style='color:gray'>Start up kits</span>",
+          n3: "4 <span style='color:gray'>Rural Youth Awards</span>",
+          n4: "1542 <span style='color:gray'>VG members & other production sites</span>",
+          n5: "132 <span style='color:gray'>Trainees (skills development)</span>",
+          n6: "2266 <span style='color:gray'>Schools</span>",
+          n7: "1767 <span style='color:gray'>Youth groups/outreach activities</span>",
+          n8: "277 <span style='color:gray'>Returnees*</span>",
+        },
+        {
+          lo: "Central River",
+          lat: 13.564556722042626, 
+          lon: -14.8259121111336,
+          n1: "30 <span style='color:gray'>Grantees</span>",
+          n2: "45 <span style='color:gray'>Start up kits</span>",
+          n3: "4 <span style='color:gray'>Rural Youth Awards</span>",
+          n4: "1542 <span style='color:gray'>VG members & other production sites</span>",
+          n5: "132 <span style='color:gray'>Trainees (skills development)</span>",
+          n6: "2266 <span style='color:gray'>Schools</span>",
+          n7: "1767 <span style='color:gray'>Youth groups/outreach activities</span>",
+          n8: "277 <span style='color:gray'>Returnees*</span>",
+        },
+        {
+          lo: "Banjul",
+          lat: 13.441706450356753, 
+          lon: -16.710067284606165,
+          n1: "4 <span style='color:gray'>Grantees</span>",
+          n2: "11 <span style='color:gray'>Start up kits</span>",
+          n3: "- <span style='color:gray'>Rural Youth Awards</span>",
+          n4: "- <span style='color:gray'>VG members & other production sites</span>",
+          n5: "12 <span style='color:gray'>Trainees (skills development)</span>",
+          n6: "- <span style='color:gray'>Schools</span>",
+          n7: "- <span style='color:gray'>Youth groups/outreach activities</span>",
+          n8: "277 <span style='color:gray'>Returnees*</span>",
+        },
+        {
+          lo: "West Coast",
+          lat: 13.227904089779233, 
+          lon: -16.226668872753145,
+          n1: "29 <span style='color:gray'>Grantees</span>",
+          n2: "15 <span style='color:gray'>Start up kits</span>",
+          n3: "2 <span style='color:gray'>Rural Youth Awards</span>",
+          n4: "- <span style='color:gray'>VG members & other production sites</span>",
+          n5: "27 <span style='color:gray'>Trainees (skills development)</span>",
+          n5: "1 <span style='color:gray'>Schools</span>",
+          n5: "11 <span style='color:gray'>Youth groups/outreach activities</span>",
+          n5: "277 <span style='color:gray'>Returnees*</span>",
+        },
+      ],
+    },
+  ]
+        
+    });
+
+})();
+
+Highcharts.chart('container-barras-acumuladas', {
+    chart: {
+        type: 'bar',
+        backgroundColor: null,
+        height: 550,
+    },
+    navigation:{
+        buttonOptions:{
+            enabled: false}
+    },
+    title: {
+        text: ''
+    },
+    credits: {
+        enabled: false
+    },
+    xAxis: {
+        tickWidth: 0,
+        lineWidth: 0,
+        lineColor: 'rgb(181, 113, 62)',
+        crosshair: false,
+        labels: {
+            reserveSpace: false,
+            align: 'left',
+            x:5,
+            y:-18,
+            style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#4d4d4d',
+            textOutline:'0px',
+            fontWeight: 'regular',
+            fontSize: '15px',
+            //position: 'bottom', //Centrar os anos nas barras
+            whiteSpace: 'nowrap', //Caixa de texto totalmente visivel 
+            },
+        },
+        categories: ['Small ruminants','Poultry','Horticulture','Agriculture services','Smartphones repairs','Other non-agro services','Beekeeping','Piggery','Rice']
+    },
+    yAxis: {
+        visible: false,
+        min: 0,
+        max: 130,
+        title: {
+            text: ''
+        }
+    },
+    legend: {
+        enabled:false,
+        verticalAlign:'top',
+        reversed: true,
+        useHTML: true,
+        itemMarginBottom:10,
+        symbolHeight: 12,
+        //symbolWidth: 11,
+        symbolRadius: 0,
+        itemStyle: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline: '0px',
+            fontWeight: '400',
+            fontSize: '16px'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size: 15px; color:{series.color}; ">{series.name}</span><br>{point.key}<br>',
+        pointFormat: '<span style="font-size: 15px; color:{series.color};"><b>{point.y}</b></span>',
+        borderRadius: 0,
+        hideDelay: 200,
+        borderWidth: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        shadow: false,
+        useHTML: true,
+        shared: false,
+        style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline: '0px',
+            fontWeight: 'regular',
+            fontSize: '16px'
+        }
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal',
+            pointPadding:0.05,
+            groupPadding:0.15,
+            borderWidth:0,
+            groupPadding: 20,
+            pointWidth:26,
+            enabled: false,
+            dataLabels: {
+                enabled: true,
+                align: 'right',
+                style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#2f2f2f',
+                    textOutline: '0px',
+                    fontWeight: 'regular',
+                    fontSize: '16px'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Sector',
+        color: '#ff8700',
+        data: [119,75,64,35,18,7,5,1,1]
+    }]
+});
+
+Highcharts.chart('container-barras-emprego', {
+    chart: {
+        type: 'bar',
+        backgroundColor: null,
+        height: 400,
+    },
+    navigation:{
+        buttonOptions:{
+            enabled: false}
+    },
+    title: {
+        text: ''
+    },
+    credits: {
+        enabled: false
+    },
+    xAxis: {
+        tickWidth: 0,
+        lineWidth: 0,
+        lineColor: 'rgb(181, 113, 62)',
+        crosshair: false,
+        labels: {
+            reserveSpace: false,
+            align: 'left',
+            x:5,
+            y:-18,
+            style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#4d4d4d',
+            textOutline:'0px',
+            fontWeight: 'regular',
+            fontSize: '15px',
+            //position: 'bottom', //Centrar os anos nas barras
+            whiteSpace: 'nowrap', //Caixa de texto totalmente visivel 
+            },
+        },
+        categories: ['Animal Husbandry','Poultry','Horticulture','Agri Services','Smartphone repairs','Other non-agro services','Beekeeping']
+    },
+    yAxis: {
+        visible: false,
+        gridLineColor: '#efbf7f',
+        min: 0,
+        max: 130,
+        title: {
+            text: ''
+        }
+    },
+    legend: {
+        enabled:false,
+        verticalAlign:'top',
+        reversed: true,
+        useHTML: true,
+        itemMarginBottom:10,
+        symbolHeight: 12,
+        //symbolWidth: 11,
+        symbolRadius: 0,
+        itemStyle: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline: '0px',
+            fontWeight: '400',
+            fontSize: '16px'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size: 15px; color:{series.color}; ">{series.name}</span><br>{point.key}<br>',
+        pointFormat: '<span style="font-size: 15px; color:{series.color};"><b>{point.y}</b></span>',
+        borderRadius: 0,
+        hideDelay: 200,
+        borderWidth: 0,
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        shadow: false,
+        useHTML: true,
+        shared: false,
+        style: {
+            fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+            color: '#2f2f2f',
+            textOutline: '0px',
+            fontWeight: 'regular',
+            fontSize: '16px'
+        }
+    },
+    plotOptions: {
+        series: {
+            stacking: 'normal',
+            pointPadding:0.05,
+            groupPadding:0.15,
+            borderWidth:0,
+            groupPadding: 20,
+            pointWidth:26,
+            enabled: false,
+            dataLabels: {
+                enabled: true,
+                align: 'right',
+                style: {
+                    fontFamily: 'apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif',
+                    color: '#2f2f2f',
+                    textOutline: '0px',
+                    fontWeight: 'regular',
+                    fontSize: '16px'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Sector',
+        color: '#ff8700',
+        data: [120,75,65,50,18,7,5]
+    }]
+});
+
+    
+/**
+ * Easing function from https://github.com/danro/easing-js/blob/master/easing.js
+ */
+        
+var easeOutBounce = function (pos) {
+    if ((pos) < (1 / 2.75)) {
+        return (7.5625 * pos * pos);
+    }
+    if (pos < (2 / 2.75)) {
+        return (7.5625 * (pos -= (1.5 / 2.75)) * pos + 0.75);
+    }
+    if (pos < (2.5 / 2.75)) {
+        return (7.5625 * (pos -= (2.25 / 2.75)) * pos + 0.9375);
+    }
+    return (7.5625 * (pos -= (2.625 / 2.75)) * pos + 0.984375);
+};
+
+Math.easeOutBounce = easeOutBounce;
+        
+$(window).scroll(function() {
+          var h = $(window).height();
+		var scrollDistance = $(window).scrollTop() + 200;
+     
+		// Assign active class to nav links while scrolling
+		$('.navegacao').each(function(i) {
+				if ($(this).offset().top <= scrollDistance) {
+                    $('.imvf-navigation a.active').removeClass('active');
+                    $('.imvf-navigation a').eq(i).addClass('active');
+				}
+		});
+}).scroll(); 
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("#mainNav a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 185
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        //window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+    
+    
+var lastScrollTop = 0;
+    
+var menu = document.getElementById("menu-topo");
+    
+
+ 
+ document.addEventListener('DOMContentLoaded', function(event) {
+
+  document.getElementById('flip-card-btn-turn-to-back').style.visibility = 'visible';
+  document.getElementById('flip-card-btn-turn-to-front').style.visibility = 'visible';
+
+  document.getElementById('flip-card-btn-turn-to-back').onclick = function() {
+  document.getElementById('flip-card').classList.toggle('do-flip');
+  };
+
+  document.getElementById('flip-card-btn-turn-to-front').onclick = function() {
+  document.getElementById('flip-card').classList.toggle('do-flip');
+  };  
+        
+document.getElementById('flip-card-btn-turn-to-back1').style.visibility = 'visible';
+  document.getElementById('flip-card-btn-turn-to-front1').style.visibility = 'visible';
+
+  document.getElementById('flip-card-btn-turn-to-back1').onclick = function() {
+  document.getElementById('flip-card1').classList.toggle('do-flip');
+  };
+
+  document.getElementById('flip-card-btn-turn-to-front1').onclick = function() {
+  document.getElementById('flip-card1').classList.toggle('do-flip');
+  };         
+      
+         
+document.getElementById('flip-card-btn-turn-to-back2').style.visibility = 'visible';
+  document.getElementById('flip-card-btn-turn-to-front2').style.visibility = 'visible';
+
+  document.getElementById('flip-card-btn-turn-to-back2').onclick = function() {
+  document.getElementById('flip-card2').classList.toggle('do-flip');
+  };
+
+  document.getElementById('flip-card-btn-turn-to-front2').onclick = function() {
+  document.getElementById('flip-card2').classList.toggle('do-flip');
+  };         
+      
+         
+document.getElementById('flip-card-btn-turn-to-back3').style.visibility = 'visible';
+  document.getElementById('flip-card-btn-turn-to-front3').style.visibility = 'visible';
+
+  document.getElementById('flip-card-btn-turn-to-back3').onclick = function() {
+  document.getElementById('flip-card3').classList.toggle('do-flip');
+  };
+
+  document.getElementById('flip-card-btn-turn-to-front3').onclick = function() {
+  document.getElementById('flip-card3').classList.toggle('do-flip');
+  };         
+         
+document.getElementById('flip-card-btn-turn-to-back4').style.visibility = 'visible';
+  document.getElementById('flip-card-btn-turn-to-front4').style.visibility = 'visible';
+
+  document.getElementById('flip-card-btn-turn-to-back4').onclick = function() {
+  document.getElementById('flip-card4').classList.toggle('do-flip');
+  };
+
+  document.getElementById('flip-card-btn-turn-to-front4').onclick = function() {
+  document.getElementById('flip-card4').classList.toggle('do-flip');
+  };
+
+});    
+
+    
+$(".nav-btn").on("click", function () {
+
+$(".nav-btn").removeClass("active");
+
+$(this).addClass("active");
+
+});
+    
+    
+    
+$(function() {
+    // select the button to click, this can be any element not just a button
+    $('.icon1').click(function() {
+        // select which info panel to show/hide.
+        $('.btn-gambia').toggle();
+        // hide any info panels that are not info1.
+        $('.container-gambia').not('.btn-gambia').hide();
+    });                        
+});
+$(function() {
+    $('.icon2').click(function() {
+        $('.btn-gambia2').toggle();
+        $('.container-gambia').not('.btn-gambia2').hide();
+    });                        
+});
+$(function() {
+    $('.icon3').click(function() {
+        $('.btn-gambia3').toggle();
+        $('.container-gambia').not('.btn-gambia3').hide();
+    });                        
+});
+    
+</script>
+
+
+    
+<!--    ATÉ AQUI-->
+
+</body>
+    
+
+</html>
